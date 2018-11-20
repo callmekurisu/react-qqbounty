@@ -1,4 +1,4 @@
-## qqBounty a collaborator project, 
+## qqBounty a collaborator project
 
 bootstrapped with [Create React App]
 
