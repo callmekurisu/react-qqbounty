@@ -1,6 +1,7 @@
 import axios from 'axios';
-import { environment } from '../Environment';
-const BountiesClient = axios.create({
+import { environment } from './Environment';
+
+export const BountiesClient = axios.create({
   baseURL: environment.qqBountyContext+"bounties",
   headers: {
     'Content-Type': 'application/json'
@@ -36,4 +37,3 @@ export const AWSClientBlank = axios.create({
     }
   });
 
-export default qqBountyClient;

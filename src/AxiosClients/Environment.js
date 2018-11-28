@@ -1,5 +1,5 @@
 const dev = {
-    qqBountyContext: "http://localhost:8080/"
+    qqBountyContext: "http://localhost:8088/"
   };
   
   const prod = {
