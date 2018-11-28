@@ -3,7 +3,11 @@ Bounty Table
 ***********************************/
 .bountyTable {
   display: flex;
-  background-color: #fff;
+  background-color: rgb(190, 152, 103);
+  border-style: solid;
+  border-color: grey;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);
   min-width: 100%;
   min-height: 200px;
   overflow-x: auto;
@@ -12,11 +16,21 @@ Bounty Table
 #bountyTable--content {
   background-color: white;
   min-width: 200px;
-  margin-right: 400px;
-  margin-left: 400px;
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-top: 1%;
+  height: 95%;
 }
 
 /*no scrollbar son! */
 .bountyTable::-webkit-scrollbar {
   display: none;
+}
+
+#window {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+  width: 1200px;
 }

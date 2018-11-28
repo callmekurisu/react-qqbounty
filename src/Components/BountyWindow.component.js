@@ -81,6 +81,8 @@ class BountyCard extends React.Component {
     return (
       <>
       {/* Why are all these cards connected??? */}
+      {/* May need to curry this here! */}
+      <div id="window">
       <section className="bountyTable">
      { this.state.bounty.map((info, index) => (
       <Card key={index} className={classes.card} id="bountyTable--content">
@@ -145,6 +147,7 @@ class BountyCard extends React.Component {
      
      ))}
       </section>
+      </div>
      </>
     );
   }
