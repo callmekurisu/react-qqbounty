@@ -29,4 +29,3 @@ export const AWSClientBlank = axios.create({
     'Content-Type': 'application/json'
   }
 });
-
