@@ -262,3 +262,36 @@ h1{
 #icon {
   width:30%;
 }
+
+
+#bounty-modal-main{
+  width: 60% !important;
+  max-width: 60% !important;
+}
+
+#bounty-modal-content-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#answer-main{
+  border: 1px solid orange;
+}
+
+#answer-list-main{
+  border: 1px solid green;
+  
+}
+#answer-submission-main{
+  border: 1px solid blue;
+  
+}
+#bounty-answers-main{
+  border: 1px solid black;
+  width: 60% !important;
+}
+#bounty-content-main{
+  border: 1px solid red;
+  width: 40% !important;
+}
+
