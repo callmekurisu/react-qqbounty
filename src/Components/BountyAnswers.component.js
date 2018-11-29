@@ -42,7 +42,8 @@ class BountyAnswersComponent extends React.Component {
             newArray.push(newAnswer);    
             this.setState({
               ...this.state,
-              answers: newArray
+              answers: newArray,
+              submittingAnswer: true
             })
             console.log(this.state);
       }
