@@ -4,9 +4,9 @@ const initialState = {
   message: ''
 }
 
-export const userReducer = (state = initialState, action) => {
+export const snackbarReducer = (state = initialState, action) => {
   switch (action.type) {
-    case userTypes.SNACKBAR_ADD:
+    case snackbarTypes.SNACKBAR_ADD:
       return {
         ...state,
         message: action.payload.message

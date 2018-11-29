@@ -1,7 +1,7 @@
 import React from 'react';
 
-import AnswerListComponent from './AnswerList.component';
-import AnswerSubmissionComponent from './AnswerSubmission.component';
+import AnswerListComponent from '../Answers/AnswerList.component';
+import AnswerSubmissionComponent from '../Answers/AnswerSubmission.component';
 import {BountiesClient} from '../../AxiosClients/qqBountyClient';
 
 class BountyAnswersComponent extends React.Component {
@@ -28,7 +28,7 @@ class BountyAnswersComponent extends React.Component {
 
 	handleSubmitAnswerClick() {
 		this.setState({
-			submittingAnswer: !state.submittingAnswer
+			submittingAnswer: !this.state.submittingAnswer
 		});
 	}
 
