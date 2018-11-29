@@ -25,7 +25,6 @@ class AnswerSubmissionComponent extends React.Component {
        
         AnswersClient.post("",answerObject)
         .then(res => {
-                console.log(res.data.result.answer);
                 this.props.updateAnswers(res.data.result.answer);
             })
             .catch(err => {
