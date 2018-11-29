@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { environment } from '../Environment';
+
 const BountiesClient = axios.create({
   baseURL: environment.qqBountyContext+"bounties",
   headers: {
@@ -9,31 +10,26 @@ const BountiesClient = axios.create({
 });
 
 const AnswersClient = axios.create({
-    baseURL: environment.qqBountyContext+"answers",
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    withCredentials: true
-  });
+  baseURL: environment.qqBountyContext+"answers",
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  withCredentials: true
+});
 
-  
-
-  const UsersClient = axios.create({
-    baseURL: environment.qqBountyContext+"users",
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    withCredentials: true
-  });
-  
-
-
+const UsersClient = axios.create({
+  baseURL: environment.qqBountyContext+"users",
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  withCredentials: true
+});
 
 export const AWSClientBlank = axios.create({
-    baseURL: "",
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  });
+  baseURL: "",
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
 
 export default qqBountyClient;
