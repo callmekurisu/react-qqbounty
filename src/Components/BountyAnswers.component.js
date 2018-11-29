@@ -2,7 +2,7 @@ import React from 'react';
 
 import AnswerListComponent from './AnswerList.component';
 import AnswerSubmissionComponent from './AnswerSubmission.component';
-import BountiesClient from '../AxiosClients/qqBountyClient';
+import {BountiesClient} from '../AxiosClients/qqBountyClient';
 
 class BountyAnswersComponent extends React.Component {
 
@@ -10,14 +10,13 @@ class BountyAnswersComponent extends React.Component {
         super(props);
         this.state = {
             submittingAnswer: true,
-            bountyId: 1,
             answers: []
         };
         this.handleSubmitAnswerClick = this.handleSubmitAnswerClick.bind(this);
     }
 
     componentDidMount(){
-        BountiesClient.get(`${this.state.bountyId}/answers`)
+        BountiesClient.get(`${this.props.bounty.bountyId}/answers`)
         .then(data => {
           this.setState({
             ...this.state,

@@ -15,27 +15,15 @@ function Transition(props) {
 }
 
 class BountyModal extends React.Component {
-  state = {
-    open: false,
-  };
-
-  handleClickOpen = () => {
-    this.setState({ open: true });
-  };
-
-  handleClose = () => {
-    this.setState({ open: false });
-  };
-
   render() {
     return (
       <div>
-        <Button onClick={this.handleClickOpen}>Click on a Bounty</Button>
+      {/* <Button onClick={this.handleClickOpen}>Click on a Bounty</Button> */}
         <Dialog
-          open={this.state.open}
+          open={this.props.open}
           TransitionComponent={Transition}
           keepMounted
-          onClose={this.handleClose}
+          onClose={this.props.close}
           aria-labelledby="alert-dialog-slide-title"
           aria-describedby="alert-dialog-slide-description"
           fullWidth
@@ -46,8 +34,8 @@ class BountyModal extends React.Component {
           </DialogTitle>
           <DialogContent>
               <div id="bounty-modal-content-container">
-              <BountyContent/>
-              <BountyAnswers/>
+              <BountyContent bounty={this.props.bounty}/>
+              <BountyAnswers bounty={this.props.bounty}/>
               </div>
           </DialogContent>
         </Dialog>

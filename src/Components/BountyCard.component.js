@@ -59,7 +59,7 @@ class BountyCard extends React.PureComponent {
             </Avatar>
           }
           action={
-            <IconButton onClick={this.props.bountyModal(this.props.info.bountyId)}>
+            <IconButton onClick={this.props.openModal(this.props.info)}>
               <MoreVertIcon />
             </IconButton>
           }
