@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { snackbarTypes } from './Snackbar.actions';
 
 const SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
 
@@ -21,6 +22,12 @@ export const login = (pUsername, pPassword) => (dispatch) => {
         login: true
       }
     });
+    dispatch({
+      type: snackbarTypes.SNACKBAR_ADD,
+      payload: {
+        message: response.data.result.message
+      }
+    });
   })
   .catch(error => {
     dispatch({
@@ -29,6 +36,7 @@ export const login = (pUsername, pPassword) => (dispatch) => {
         login: true
       }
     });
+    console.log(error);
   });
 }
 
@@ -38,6 +46,12 @@ export const logout = () => (dispatch) => {
     type: userTypes.USER_LOGOUT,
     payload: {
       login: false
+    }
+  });
+  dispatch({
+    type: snackbarTypes.SNACKBAR_ADD,
+    payload: {
+      message: "Logged out"
     }
   });
 }
@@ -55,6 +69,12 @@ export const register = (pUsername, pPassword, pEmail) => (dispatch) => {
         login: true
       }
     });
+    dispatch({
+      type: snackbarTypes.SNACKBAR_ADD,
+      payload: {
+        message: response.data.result.message
+      }
+    });
   })
   .catch(error => {
     dispatch({
@@ -63,5 +83,7 @@ export const register = (pUsername, pPassword, pEmail) => (dispatch) => {
         login: false
       }
     });
+    console.log(error);
+
   });
 }
