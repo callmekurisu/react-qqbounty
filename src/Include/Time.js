@@ -1,5 +1,3 @@
-// Create a new JavaScript Date object based on the timestamp
-// multiplied by 1000 so that the argument is in milliseconds, not seconds.
 
 export default 
 function time(unix_timestamp){
@@ -24,5 +22,5 @@ function time(unix_timestamp){
     } else {
         return ''
     }
-    
+
 }
