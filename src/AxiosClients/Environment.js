@@ -1,5 +1,7 @@
 const dev = {
-    qqBountyContext: "http://localhost:8080/"
+    qqBountyContext: "http://localhost:8088/"
+    //qqBountyContext: process.env.REACT_APP_SERVER_ADDRESS
+
   };
   
   const prod = {
