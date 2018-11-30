@@ -1,23 +1,40 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import WelcomeBanner from './WelcomeBanner.component';
-import PopularBountyWindow from './Bounty/BountyWindows/PopularBountyWindow.component';
-import NewBountyWindow from './Bounty/BountyWindows/NewBountyWindow.component';
-import ExpireSoonBountyWindow from './Bounty/BountyWindows/ExpireSoonBountyWindow.component';
+import Home from './Pages/Home.component';
+import Store from './Pages/Store.component';
+import UserProfile from './Pages/UserProfile.component';
 
 import BountyModal from './Bounty/BountyModal.component';
 import AppSnackbar from './Commons/AppSnackbar.component';
 export class MainContent extends React.Component {
-  
+
+	renderPage = () => {
+		if(this.props.page === 'home') {
+			return 	<Home />
+		}
+		else if(this.props.page === 'store') {
+			return 	<Store />			
+		}
+		else if(this.props.page === 'user_profile') {
+			return 	<UserProfile />			
+		}	
+	}
+
+	renderBanner = () => {
+		if(!this.props.login)
+			return <WelcomeBanner />
+		else return null
+	}
+
 	render() {
+		let sRenderPage 	= this.renderPage();
+		let sRenderBanner = this.renderBanner();
+
 		return (
 			<div className="main-content-wrapper">
-				<WelcomeBanner />
-				
-				<PopularBountyWindow />
-				<NewBountyWindow />
-				<ExpireSoonBountyWindow />
-
+				{sRenderBanner}
+				{sRenderPage}
 				<BountyModal  />
 				<AppSnackbar />
 			</div>
@@ -27,7 +44,8 @@ export class MainContent extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    login: state.user.login
+		page: 	state.mainContent.page,
+		login: 	state.user.login
   }
 }
 
