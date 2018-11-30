@@ -16,6 +16,7 @@ export const login = (pUsername, pPassword) => (dispatch) => {
   })
   .then(response => {
     localStorage.setItem('JWT', response.data.result.jwt);
+    console.log(response)
     dispatch({
       type: userTypes.USER_LOGIN,
       payload: {
@@ -30,6 +31,8 @@ export const login = (pUsername, pPassword) => (dispatch) => {
     });
   })
   .catch(error => {
+    console.log(error)
+
     dispatch({
       type: userTypes.USER_LOGIN,
       payload: {

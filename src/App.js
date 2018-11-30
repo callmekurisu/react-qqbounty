@@ -7,7 +7,6 @@ import  NavBar  from './Components/Navbar/NavBar.component';
 import  MainContent  from './Components/MainContent.component';
 
 import './Css/App.css';
-import BountyWindow from './Components/Bounty/BountyWindow.component';
 
 
 class App extends Component {

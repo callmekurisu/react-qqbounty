@@ -7,7 +7,7 @@ export class AppSnackbar extends React.Component {
   constructor(props) {
 		super(props);
 		this.state = {
-      snackbarOpen: true,
+      snackbarOpen: false,
       message: ''
 		};
   }

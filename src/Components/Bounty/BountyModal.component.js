@@ -1,9 +1,11 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+import * as bountyActions from '../../Redux/Actions/Bounty.actions';
+
 import BountyContent from './BountyContent.component';
 import BountyAnswers from './BountyAnswers.component';
 
-import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
@@ -14,14 +16,26 @@ function Transition(props) {
 }
 
 class BountyModal extends React.Component {
+
+  renderDialogContent = () => {
+    if(this.props.modalBounty !== null) {
+      return  <>
+                <BountyContent bounty={this.props.modalBounty}/>
+                <BountyAnswers bounty={this.props.modalBounty}/>
+              </>
+    }
+    else return null
+  }
+
   render() {
+    let renderDialogContent = this.renderDialogContent();
     return (
       <div>
         <Dialog
-          open={this.props.open}
+          open={this.props.modalOpen}
           TransitionComponent={Transition}
           keepMounted
-          onClose={this.props.close}
+          onClose={this.props.closeModal}
           aria-labelledby="alert-dialog-slide-title"
           aria-describedby="alert-dialog-slide-description"
           fullWidth
@@ -32,8 +46,7 @@ class BountyModal extends React.Component {
           </DialogTitle>
           <DialogContent>
             <div id="bounty-modal-content-container">
-              <BountyContent bounty={this.props.bounty}/>
-              <BountyAnswers bounty={this.props.bounty}/>
+              {renderDialogContent}
             </div>
           </DialogContent>
         </Dialog>
@@ -42,4 +55,16 @@ class BountyModal extends React.Component {
   }
 }
 
-export default BountyModal;
+const mapStateToProps = (state) => {
+  return {
+    modalOpen:      state.bounty.modalOpen,
+    modalBounty:    state.bounty.modalBounty,
+    modalBountyId:  state.bounty.modalBountyId
+  }
+}
+
+const mapDispatchToProps = {
+  closeModal: bountyActions.closeBountyModal
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(BountyModal)
