@@ -1,25 +1,45 @@
 /*********************************
-Bounty Table 
+    Bounty Table 
 ***********************************/
-.bountyTable {
+.bounty-window {
   display: flex;
-  background-color: rgb(190, 152, 103);
-  border-style: solid;
-  border-color: grey;
-  border-radius: 10px;
-  box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);
-  min-width: 100%;
-  min-height: 200px;
+  width: 100%;
+  height: 200px;
+  padding: 5px 30px;
   overflow-x: auto;
 }
 
-#bountyTable--content {
+.bounty-card {
+  flex: 0 0 200px;
   background-color: white;
-  min-width: 200px;
-  margin-right: 50px;
-  margin-left: 50px;
-  margin-top: 1%;
-  height: 95%;
+  width: 200px;
+  height: 100%;
+  margin: 0px 5px;
+  overflow: visible !important;
+}
+
+.bounty-card:hover {
+  cursor: pointer;
+}
+
+.bounty-window-fade-left {
+  flex: 0 0 40px;
+  content: '';
+  display: flex;
+  height: 190px;
+  background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(251, 251, 251, 0) 100%);
+  position: relative;
+  margin-right: -40px;
+}
+
+.bounty-window-fade-right {
+  flex: 0 0 40px;
+  content: '';
+  display: flex;
+  height: 190px;
+  background: linear-gradient(to left, rgb(255, 255, 255) 0%,  rgba(251, 251, 251, 0) 100%);
+  position: relative;
+  margin-left: -40px;
 }
 
 .bountyTable::-webkit-scrollbar {
@@ -39,13 +59,21 @@ Bounty Table
 
 
 /*********************************
-      MainContent.compopnent.js
+      MainContent.component.js
 *********************************/
 .main-content-wrapper {
   background-color: white;
   min-height: 70vh;
   width: 100%;
   margin: 10px 0px;
+}
+
+/*********************************
+      WelcomeBanner.component.js
+*********************************/
+#welcome-banner-wrapper {
+  width: 70vw !important;
+  margin: auto !important;
 }
 
 #bounty-modal-main{

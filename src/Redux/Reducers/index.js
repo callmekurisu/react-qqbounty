@@ -1,10 +1,10 @@
 import { combineReducers }  from 'redux';
-import { bWindowReducer }   from './BountyWindow.reducer';
+import { bountyReducer }   from './Bounty.reducer';
 import { userReducer }      from './User.reducer';
 import { snackbarReducer }      from './Snackbar.reducer';
 
 export const state = combineReducers({
   user: userReducer,
   snackbar: snackbarReducer,
-  bountyWindow: bWindowReducer
+  bounty: bountyReducer
 })
