@@ -1,26 +1,68 @@
 import React from 'react';
-import BountyCard from './BountyCard/BountyCard.component';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
+import BountyCard from './BountyCard.component';
+
 import { connect } from 'react-redux';
 
+const settings = {
+  dots: false,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 5,
+  slidesToScroll: 5,
+  initialSlide: 0,
+  swipeToSlide: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+};
 export class BountyWindow extends React.Component {
 
+  renderBountyCarousel = (pBounties) => {
+    if(pBounties !== null) {
+      return  pBounties.map(bounty => {
+                return <BountyCard key={bounty.bountyId} bounty={bounty} />
+              })
+    } else {
+      return null;
+    }
+  }
+
   render() {
+    let carouselSlides = this.renderBountyCarousel(this.props.bounties);
     return (
-      <>
-        <div id="bounty-window">
-        <div class="bounty-window-fade-left"></div>
-          <div className="bounty-window">
-            { this.props.bounties.map(bounty => (
-              <BountyCard
-                key={bounty.bountyId}
-                bId={bounty.bountyId}
-                bounty={bounty}
-              />
-            ))}
-          </div>
-          <div class="bounty-window-fade-right"></div>
-        </div>
-      </>
+      <div className="bounty-carousel-wrapper">
+        <Slider
+          {...settings} 
+        >
+          {carouselSlides}
+        </Slider>
+      </div>
     );
   }
 }

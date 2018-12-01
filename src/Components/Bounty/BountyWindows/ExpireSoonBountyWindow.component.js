@@ -7,7 +7,7 @@ export class ExpireSoonBountyWindow extends React.Component {
 	render() {
 		return (
       <>
-        <div id="expire-soon-bounty-window-wrapper">
+        <div id="expire-soon-bounty-window-wrapper" className="bounty-window-wrapper">
           <h1 id="expire-soon-bounty-window-title">Expire Soon</h1>
           <BountyWindow bounties={this.props.bounties} />
         </div>

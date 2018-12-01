@@ -2,9 +2,9 @@ import React from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
-import BANNER_1 from '../Assets/images/welcome_banner_1.jpeg'
-import BANNER_2 from '../Assets/images/welcome_banner_2.jpeg'
-import BANNER_3 from '../Assets/images/welcome_banner_3.jpeg'
+import BANNER_1 from '../../Assets/images/welcome_banner_1.jpeg';
+import BANNER_2 from '../../Assets/images/welcome_banner_2.jpeg';
+import BANNER_3 from '../../Assets/images/welcome_banner_3.jpeg';
 
 export class WelcomeBanner extends React.Component {
   

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
@@ -10,6 +11,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { connect } from 'react-redux';
 
+import * as mainContentActions from '../../Redux/Actions/MainContent.actions';
 import * as userActions from '../../Redux/Actions/User.actions';
 
 import Login from './Login.component';
@@ -112,6 +114,7 @@ export class NavBar extends React.Component {
                 open={isOpen}
                 onClose={this.handleClose}
               >
+                <MenuItem onClick={() => this.props.changePage('user_profile')}>Profile</MenuItem>
                 <MenuItem onClick={this.handleLogout}>Logout</MenuItem>
               </Menu>
             </div>;
@@ -134,9 +137,27 @@ export class NavBar extends React.Component {
       <>
         <AppBar position="static">
           <Toolbar>
-            <Typography variant="h6" color="inherit" className={classes.grow}>
+            <Typography 
+              id="nav-logo"
+              className={classes.grow}
+              variant="h6" 
+              color="inherit" 
+              onClick={() => this.props.changePage('home')}
+              >
               qqBounty
             </Typography>
+            <Button 
+              color="inherit"
+              className="navbar-tabs"
+              onClick={() => this.props.changePage('dashboard')}>
+              Dashboard
+            </Button>
+            <Button 
+              color="inherit"
+              className="navbar-tabs"
+              onClick={() => this.props.changePage('store')}>
+              Store
+            </Button>
             {renderDropdown}
           </Toolbar>
         </AppBar>
@@ -157,7 +178,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-  logoutAction: userActions.logout
+  logoutAction:   userActions.logout,
+  changePage:     mainContentActions.changeToPage
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(NavBar));
