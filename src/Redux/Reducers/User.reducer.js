@@ -1,7 +1,8 @@
 import { userTypes } from "../Actions/User.actions";
 
 const initialState = {
-  login: false
+  login: true, 
+  balance: 0
 }
 
 export const userReducer = (state = initialState, action) => {
@@ -19,6 +20,11 @@ export const userReducer = (state = initialState, action) => {
     case userTypes.USER_REGISTER:
       return {
         ...state
+      }
+    case userTypes.USER_BALANCE_CHANGE:
+      return {
+        ...state,
+        balance: action.payload.balance
       }
     default:
       break;

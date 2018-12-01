@@ -1,21 +1,36 @@
 /*********************************
+      NavBar
+*********************************/
+#nav-logo { cursor: pointer; }
+
+/*********************************
     Bounty Table 
 ***********************************/
-.bounty-window {
-  display: flex;
+.bounty-window-wrapper {
+  max-width:85%;
+  margin: auto;
+}
+
+.slick-prev:before, .slick-next:before{
+  color:#ff7e0c;
+}
+
+.bounty-carousel-wrapper {
+  display: inline-block;
   width: 100%;
-  height: 200px;
   padding: 5px 30px;
   overflow-x: auto;
 }
 
 .bounty-card {
+  border: 0.3px solid;
   flex: 0 0 200px;
-  background-color: white;
+  background-color: #ffe1b6 !important;
   width: 200px;
-  height: 100%;
-  margin: 0px 5px;
+  height: 240px;
+  margin: 5px 5px;
   overflow: visible !important;
+  display: inline-block;
 }
 
 .bounty-card:hover {
@@ -53,10 +68,6 @@
   margin: auto;
   width: 1200px;
 }
-/*********************************
-      NavBar
-*********************************/
-
 
 /*********************************
       MainContent.component.js
@@ -74,6 +85,73 @@
 #welcome-banner-wrapper {
   width: 70vw !important;
   margin: auto !important;
+}
+
+/*********************************
+      Store.component.js
+*********************************/
+#store-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#store-header {
+  text-align: center;
+}
+
+#store-shelf {
+  display: flex;
+  justify-content: center;
+}
+
+.product-container {
+  height: 300px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.product-content-wrapper {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-name {
+  margin: auto;
+  text-align: center;
+}
+
+.product-image {
+  margin: auto;
+}
+
+.product-cost {
+  margin: auto;
+}
+
+.product-credit {
+  margin: auto;
+}
+
+.product-
+.product-radio-btn {
+  color: #FFBD2F !important;
+  margin: auto !important;
+  align-self: flex-end;
+}
+
+#store-btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#purchase-btn {
+  height: 30px;
+  width: 140px;
+  justify-self: center;
 }
 
 #bounty-modal-main{

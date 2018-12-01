@@ -6,7 +6,8 @@ const SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
 export const userTypes = {
   USER_LOGIN:   'USER_LOGIN',
   USER_LOGOUT:  'USER_LOGOUT',
-  USER_REGISTER:'USER_REGISTER'
+  USER_REGISTER:'USER_REGISTER',
+  USER_BALANCE_CHANGE:'USER_BALANCE_CHANGE'
 }
 
 export const login = (pUsername, pPassword) => (dispatch) => {
@@ -31,15 +32,12 @@ export const login = (pUsername, pPassword) => (dispatch) => {
     });
   })
   .catch(error => {
-    console.log(error)
-
     dispatch({
       type: userTypes.USER_LOGIN,
       payload: {
         login: true
       }
     });
-    console.log(error);
   });
 }
 
@@ -88,5 +86,14 @@ export const register = (pUsername, pPassword, pEmail) => (dispatch) => {
     });
     console.log(error);
 
+  });
+}
+
+export const balanceChange = (pBalance) => (dispatch) => {
+  dispatch({
+    type: userTypes.USER_BALANCE_CHANGE,
+    payload: {
+      balance: pBalance
+    }
   });
 }
