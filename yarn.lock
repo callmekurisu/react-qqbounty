@@ -2532,6 +2532,13 @@ capture-exit@^1.2.0:
   dependencies:
     rsvp "^3.3.3"
 
+carousel@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/carousel/-/carousel-0.0.3.tgz#f83ca5583165bb98f174c01e67a1b54b902cc97f"
+  integrity sha1-+DylWDFlu5jxdMAeZ6G1S5AsyX8=
+  dependencies:
+    domready "~0.2.12"
+
 case-sensitive-paths-webpack-plugin@2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/case-sensitive-paths-webpack-plugin/-/case-sensitive-paths-webpack-plugin-2.1.2.tgz#c899b52175763689224571dad778742e133f0192"
@@ -3746,6 +3753,11 @@ domhandler@^2.3.0:
   integrity sha512-JiK04h0Ht5u/80fdLMCEmV4zkNh2BcoMFBmZ/91WtYZ8qVXSKjiw7fXMgFPnHcSZgOo3XdinHvmnDUeMf5R4wA==
   dependencies:
     domelementtype "1"
+
+domready@~0.2.12:
+  version "0.2.13"
+  resolved "https://registry.yarnpkg.com/domready/-/domready-0.2.13.tgz#5ec8340b5ee5f76ad72fd32007cfb5d38a2cd361"
+  integrity sha1-Xsg0C17l92rXL9MgB8+104os02E=
 
 domutils@1.1:
   version "1.1.6"
@@ -9045,6 +9057,19 @@ q@^1.1.2:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
   integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=
+
+qr.js@0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/qr.js/-/qr.js-0.0.0.tgz#cace86386f59a0db8050fa90d9b6b0e88a1e364f"
+  integrity sha1-ys6GOG9ZoNuAUPqQ2baw6IoeNk8=
+
+qrcode.react@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/qrcode.react/-/qrcode.react-0.8.0.tgz#413b31cc3b62910e39513f7bead945e01c4c34fb"
+  integrity sha512-16wKpuFvLwciIq2YAsfmPUCnSR8GrYPsXRK5KVdcIuX0+W/MKZbBkFhl44ttRx4TWZHqRjfztoWOxdPF0Hb9JA==
+  dependencies:
+    prop-types "^15.6.0"
+    qr.js "0.0.0"
 
 qs@6.5.2, qs@~6.5.2:
   version "6.5.2"
