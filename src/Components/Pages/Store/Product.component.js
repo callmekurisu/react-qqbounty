@@ -37,6 +37,8 @@ export class Product extends React.Component {
             checkedIcon={<RadioButtonCheckedIcon fontSize="small" />}
           />
         </Paper>
+
+        {/* Paywall component for products */}
       </>
 		)
 	}

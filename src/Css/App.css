@@ -184,3 +184,16 @@
   border: 1px solid red;
   width: 40% !important;
 }
+
+/***********************************
+User Profile
+************************************/
+.container{
+  padding:5%;
+}
+.container .profile-img{
+  text-align:center;
+}
+.container .profile-details{
+  border-left:3px solid #ded4da;
+}
