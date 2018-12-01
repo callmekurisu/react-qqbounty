@@ -23,9 +23,11 @@
     "react-responsive-carousel": "^3.1.43",
     "react-scripts": "2.1.1",
     "react-scroll-horizontal": "^1.5.1",
+    "react-slick": "^0.23.2",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "slick-carousel": "^1.8.1",
     "tether": "^1.4.5"
   },
   "eslintConfig": {

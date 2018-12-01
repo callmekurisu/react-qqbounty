@@ -2,7 +2,7 @@ export const mainContentTypes = {
   CHANGE_PAGE:     'CHANGE_PAGE'
 }
 
-export const changeToHome = (pPage) => (dispatch) => {
+export const changeToPage = (pPage) => (dispatch) => {
   dispatch({
     type: mainContentTypes.CHANGE_PAGE,
       payload: {

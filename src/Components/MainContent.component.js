@@ -1,13 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import WelcomeBanner from './WelcomeBanner.component';
+import WelcomeBanner from './Commons/WelcomeBanner.component';
 import Home from './Pages/Home.component';
 import Store from './Pages/Store.component';
 import UserProfile from './Pages/UserProfile.component';
 
 import BountyModal from './Bounty/BountyModal.component';
 import AppSnackbar from './Commons/AppSnackbar.component';
+
+import * as storeActions from '../Redux/Actions/Store.actions';
+
 export class MainContent extends React.Component {
+
+	componentDidMount() {
+		// this.props.setUpStore();
+	}
 
 	renderPage = () => {
 		if(this.props.page === 'home') {
@@ -50,6 +57,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
+	setUpStore: storeActions.setUp
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainContent)

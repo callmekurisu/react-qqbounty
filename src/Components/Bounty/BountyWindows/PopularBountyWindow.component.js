@@ -7,7 +7,7 @@ export class PopularBountyWindow extends React.Component {
 	render() {
 		return (
       <>
-        <div id="popular-bounty-window-wrapper">
+        <div id="popular-bounty-window-wrapper" className="bounty-window-wrapper">
           <h1 id="popular-bounty-window-title">Popular</h1>
           <BountyWindow bounties={this.props.bounties} />
         </div>

@@ -1,7 +1,7 @@
 import { mainContentTypes } from "../Actions/MainContent.actions";
 
 const initialState = {
-  page: 'user_profile'
+  page: 'home'
 }
 
 export const mainContentReducer = (state = initialState, action) => {
