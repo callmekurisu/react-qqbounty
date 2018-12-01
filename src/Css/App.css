@@ -28,8 +28,9 @@
   background-color: #ffe1b6 !important;
   width: 200px;
   height: 240px;
-  margin: 0px 5px;
+  margin: 5px 5px;
   overflow: visible !important;
+  display: inline-block;
 }
 
 .bounty-card:hover {

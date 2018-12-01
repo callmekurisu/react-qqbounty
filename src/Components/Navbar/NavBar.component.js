@@ -114,7 +114,7 @@ export class NavBar extends React.Component {
                 open={isOpen}
                 onClose={this.handleClose}
               >
-                <MenuItem onClick={this.changePage('user_profile')}>Profile</MenuItem>
+                <MenuItem onClick={() => this.props.changePage('user_profile')}>Profile</MenuItem>
                 <MenuItem onClick={this.handleLogout}>Logout</MenuItem>
               </Menu>
             </div>;
@@ -146,6 +146,12 @@ export class NavBar extends React.Component {
               >
               qqBounty
             </Typography>
+            <Button 
+              color="inherit"
+              className="navbar-tabs"
+              onClick={() => this.props.changePage('dashboard')}>
+              Dashboard
+            </Button>
             <Button 
               color="inherit"
               className="navbar-tabs"

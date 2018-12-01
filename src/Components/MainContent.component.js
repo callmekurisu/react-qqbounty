@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import WelcomeBanner from './Commons/WelcomeBanner.component';
 import Home from './Pages/Home.component';
 import Store from './Pages/Store.component';
+import Dashboard from './Pages/Dashboard.component';
 import UserProfile from './Pages/UserProfile.component';
 
 import BountyModal from './Bounty/BountyModal.component';
@@ -25,6 +26,9 @@ export class MainContent extends React.Component {
 		}
 		else if(this.props.page === 'user_profile') {
 			return 	<UserProfile />			
+		}	
+		else if(this.props.page === 'dashboard') {
+			return 	<Dashboard />			
 		}	
 	}
 
