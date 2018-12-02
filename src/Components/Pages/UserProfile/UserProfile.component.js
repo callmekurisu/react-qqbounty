@@ -1,5 +1,4 @@
 import React from 'react';
-import { UsersClient } from '../../../AxiosClients/qqBountyClient';
 import UserBountyWindow from '../../Bounty/BountyWindows/UserBountyWindow.component';
 
 import { connect } from 'react-redux';

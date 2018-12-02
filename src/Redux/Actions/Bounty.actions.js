@@ -2,13 +2,10 @@ import { BountiesClient } from '../../AxiosClients/qqBountyClient';
 import axios from 'axios';
 import { userTypes }      from './User.actions';
 import { snackbarTypes }  from './Snackbar.actions';
-<<<<<<< HEAD
-const SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
-let jwtToken = localStorage.getItem('JWT');
 
-=======
-import axios from 'axios';
->>>>>>> b8a8b3b6860c837d267c02d30bd0d615571065e2
+let jwtToken = localStorage.getItem('JWT');
+const SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
+
 export const bountyTypes = {
   GET_SEARCH_BOUNTIES:      'GET_SEARCH_BOUNTIES',
   GET_NEW_BOUNTIES:         'GET_NEW_BOUNTIES',
@@ -20,7 +17,7 @@ export const bountyTypes = {
   OPEN_BOUNTY_MODAL:  'OPEN_BOUNTY_MODAL',
   CLOSE_BOUNTY_MODAL: 'CLOSE_BOUNTY_MODAL'
 }
-const SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
+
 
 
 export const getNewBounties = () => (dispatch) => {
@@ -83,7 +80,6 @@ export const getHighPayBounties = () => (dispatch) => {
   });
 }
 
-<<<<<<< HEAD
 export const getUserBounties = () => (dispatch) => {
   axios.get(`${SERVER_ADDRESS}/bounties/user`,
    { headers: {
@@ -100,52 +96,6 @@ export const getUserBounties = () => (dispatch) => {
   })
 }
 
-
-export const submitBounty = (state) => (dispatch) => {
-  console.log(state)
-  // BountiesClient.post()
-  // .then((response) => {
-  //   dispatch({
-  //     type: bountyTypes.GET_HIGH_PAY_BOUNTIES,
-  //       payload: {
-  //         highPayBounties: response.data.result
-  //       }
-  //   })
-  // })
-
-  
-
-  dispatch({
-    type: snackbarTypes.SNACKBAR_ADD,
-    payload: {
-      message: "Bounty Submitted"
-    }
-=======
-export const getBountyBySubjects = (pSubjects) => (dispatch) => {
-  // ["Math","PADFAdsf"]
-  let paramString = "";
-  if(pSubjects.length !== 0) {
-      paramString = "?"
-      pSubjects.map((subject)=>{
-          paramString = "subjects="+subject+"&"
-      })
-
-      paramString = paramString.substring(0,paramString.length-1);
-  }
-  axios.get(SERVER_ADDRESS+`/bounties/subjects${paramString}`)
-  .then(response => {
-    dispatch({
-      type: bountyTypes.GET_HIGH_PAY_BOUNTIES,
-      payload: {
-        highPayBounties: response.data.result
-      }
-    });
-  })
-  .catch(error => {
-    console.log("No bueno =(")
->>>>>>> b8a8b3b6860c837d267c02d30bd0d615571065e2
-  });
-}
 
 export const submitBounty = (state) => (dispatch) => {
   console.log(state)
