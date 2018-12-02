@@ -3,6 +3,8 @@ import { Jumbotron, Container, Button } from 'reactstrap';
 import { MdThumbDown, MdThumbUp } from "react-icons/md";
 import time from '../../Include/Time';
 import axios from 'axios';
+
+import gem from '../../Assets/images/gem.png';
 const REACT_APP_SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
 
 
@@ -39,7 +41,12 @@ class BountyContentComponent extends React.Component {
       <Jumbotron fluid id='bounty-content-main'>
         <Container fluid>
           <div className='bounty-content-column flex-space-between'>
-            <div> Reward: {this.props.bounty.amount}</div>
+            <div className='bounty-content-column'>  
+                <img src={gem} width="50%" height="90%" alt="Reward: "/>
+                <div className='fontSize30 margin-auto'>
+                  {this.props.bounty.amount}
+                </div>
+                </div>
             <p>Expiration: {time(this.props.bounty.expiration)}</p>
           </div>
           <h2 className="display-4">{this.props.bounty.title}</h2>

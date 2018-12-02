@@ -2,6 +2,7 @@ import { BountiesClient } from '../../AxiosClients/qqBountyClient';
 import axios from 'axios';
 import { userTypes }      from './User.actions';
 import { snackbarTypes }  from './Snackbar.actions';
+import { SubjectSubscriber } from 'rxjs/internal/Subject';
 
 const SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
 
@@ -122,6 +123,7 @@ export const getSearchBounties = (pSubjects) => (dispatch) => {
     })
   }
 }
+
 
 
 export const submitBounty = (state) => (dispatch) => {
