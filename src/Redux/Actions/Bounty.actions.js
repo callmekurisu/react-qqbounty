@@ -127,6 +127,7 @@ export const getSearchBounties = (pSubjects) => (dispatch) => {
 
 
 export const submitBounty = (state) => (dispatch) => {
+  console.log(state);
   if(localStorage.getItem('JWT')) {
     let jwtToken = localStorage.getItem('JWT');
     axios.defaults.headers.common['Authorization'] = 'Bearer ' + jwtToken;
