@@ -1,7 +1,73 @@
+body {
+  margin: 0;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 /*********************************
       NavBar
 *********************************/
-#nav-logo { cursor: pointer; }
+#app-navbar { height: 10vh;}
+#nav-logo   { cursor: pointer; }
+
+/*********************************
+      Snackbar
+*********************************/
+.app-snackbar-message {
+  margin: 0;
+  font-size: small;
+}
+/*********************************
+      Advertisement Text
+*********************************/
+.advertise-text-wrapper {
+
+}
+
+.advertise-span {}
+.advertise-text {}
+
+.advertise-span {
+  border-top: 2px 
+}
+
+.advertise-text {
+  text-align: center;
+  font-size: 3em;
+}
+/*********************************
+      Submit Bounty
+*********************************/
+#submit-bounty-wrapper {
+  background-color: #d2d2d2;
+  padding: 14px;
+  margin: auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+#submit-bounty-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#bounty-select-title {  margin: 0 20px 0 0; width: 200px; }
+#bounty-select-timer {  width: 300px;}
+#bounty-select-description { width: 100%; }
+#bounty-select-amount { width: 200px;}
+#bounty-select-subjects { height: 100px; }
+
+.SelectSubjects-root-277 { height: 0px !important;}
+#submit-bounty-btn { width: 150px;}
 
 /*********************************
     Bounty Table 
@@ -16,10 +82,20 @@
 }
 
 .bounty-carousel-wrapper {
+  border: 0.1px dotted gray;
   display: inline-block;
   width: 100%;
   padding: 5px 30px;
   overflow-x: auto;
+  height: 170px;
+}
+
+.bounty-window-title {
+  font-weight: initial;
+  text-decoration: underline;
+  font-size: x-large;
+  margin: 3px auto;
+  color: #de9000;
 }
 
 .bounty-card {
@@ -27,7 +103,7 @@
   flex: 0 0 200px;
   background-color: #ffe1b6 !important;
   width: 200px;
-  height: 240px;
+  height: 155px;
   margin: 5px 5px;
   overflow: visible !important;
   display: inline-block;
@@ -74,9 +150,8 @@
 *********************************/
 .main-content-wrapper {
   background-color: white;
-  min-height: 70vh;
-  width: 100%;
-  margin: 10px 0px;
+  min-height: 80vh;
+  padding: 0 30px;
 }
 
 /*********************************
@@ -197,3 +272,13 @@ User Profile
 .container .profile-details{
   border-left:3px solid #ded4da;
 }
+
+/*******************************
+      footer
+*******************************/
+#footer {
+  height: 10vh;
+  width: 100%;
+  background-color: black;
+}
+

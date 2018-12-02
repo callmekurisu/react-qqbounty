@@ -4,7 +4,13 @@ import WelcomeBanner from './Commons/WelcomeBanner.component';
 import Home from './Pages/Home.component';
 import Store from './Pages/Store.component';
 import Dashboard from './Pages/Dashboard.component';
+<<<<<<< HEAD
 import UserProfile from './Pages/UserProfile/UserProfile.component';
+=======
+import UserProfile from './Pages/UserProfile.component';
+import SubmitBounty from './Pages/SubmitBounty.component';
+import AdvertisementText from './Commons/AdvertisementText.component';
+>>>>>>> 9c44f7ef7b2fd6cd6e28cf8f70fca904e61fbb3f
 
 import BountyModal from './Bounty/BountyModal.component';
 import AppSnackbar from './Commons/AppSnackbar.component';
@@ -30,6 +36,9 @@ export class MainContent extends React.Component {
 		else if(this.props.page === 'dashboard') {
 			return 	<Dashboard />			
 		}	
+		else if(this.props.page === 'submit_bounty') {
+			return 	<SubmitBounty />			
+		}	
 	}
 
 	renderBanner = () => {
@@ -46,7 +55,7 @@ export class MainContent extends React.Component {
 			<div className="main-content-wrapper">
 				{sRenderBanner}
 				{sRenderPage}
-				<BountyModal  />
+				<BountyModal />
 				<AppSnackbar />
 			</div>
 		)

@@ -115,6 +115,7 @@ export class NavBar extends React.Component {
                 onClose={this.handleClose}
               >
                 <MenuItem onClick={() => this.props.changePage('user_profile')}>Profile</MenuItem>
+                <MenuItem onClick={() => this.props.changePage('submit_bounty')}>Post Bounty</MenuItem>                
                 <MenuItem onClick={this.handleLogout}>Logout</MenuItem>
               </Menu>
             </div>;
@@ -135,16 +136,20 @@ export class NavBar extends React.Component {
     let renderDialog = this.handleRenderDialog();
     return (
       <>
-        <AppBar position="static">
+        <AppBar position="static" id="app-navbar">
           <Toolbar>
+            <Button 
+              color="inherit"
+              className="navbar-tabs"
+              onClick={() => this.props.changePage('home')}>
+              qqBounty
+            </Button>
             <Typography 
               id="nav-logo"
               className={classes.grow}
               variant="h6" 
               color="inherit" 
-              onClick={() => this.props.changePage('home')}
-              >
-              qqBounty
+              > 
             </Typography>
             <Button 
               color="inherit"

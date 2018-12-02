@@ -11,7 +11,8 @@ export const userTypes = {
   USER_LOGIN:   'USER_LOGIN',
   USER_LOGOUT:  'USER_LOGOUT',
   USER_REGISTER:'USER_REGISTER',
-  USER_BALANCE_CHANGE:'USER_BALANCE_CHANGE'
+  USER_BALANCE_CHANGE:'USER_BALANCE_CHANGE',
+  SET_USER_INFO:      'SET_USER_INFO'
 }
 
 export const login = (pUsername, pPassword) => (dispatch) => {
@@ -21,8 +22,24 @@ export const login = (pUsername, pPassword) => (dispatch) => {
   })
   .then(response => {
     localStorage.setItem('JWT', response.data.result.jwt);
+
     setJwtToken();
     console.log(response)
+
+    axios.defaults.headers.common['Authorization'] = 'Bearer ' + response.data.result.jwt;
+    axios.get(SERVER_ADDRESS+'/users/info')
+    .then(response => {
+      dispatch({
+        type: userTypes.SET_USER_INFO,
+        payload: {
+          user: response.data.result.user
+        }
+      });
+    })
+    .catch(error => {
+      
+    });
+
     dispatch({
       type: userTypes.USER_LOGIN,
       payload: {
