@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { environment } from './Environment';
+let jwtToken = localStorage.getItem('JWT');
+
 export const BountiesClient = axios.create({
   baseURL: environment.qqBountyContext+"bounties",
   headers: {

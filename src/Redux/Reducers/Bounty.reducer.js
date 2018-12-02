@@ -16,6 +16,9 @@ const initialState = {
 	searchBounties: {bounty_list:{
     content: []
   }},
+  userBounties: {bounty_list:{
+    content: []
+  }},
   modalOpen: false,
   modalBountyId: null,
   modalBounty: null
