@@ -1,7 +1,5 @@
 import axios from 'axios';
 import { environment } from './Environment';
-
-
 export const BountiesClient = axios.create({
   baseURL: environment.qqBountyContext+"bounties",
   headers: {
@@ -11,7 +9,7 @@ export const BountiesClient = axios.create({
 
 export const AnswersClient = axios.create({
   baseURL: environment.qqBountyContext + "answers",
-  headers: {
+  headers: { 
     'Content-Type': 'application/json'
   }
 });

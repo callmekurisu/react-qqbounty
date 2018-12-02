@@ -6,7 +6,7 @@ const initialState = {
     "description": "test bounty",
     "submitted": 1543344599788,
     "amount": 100,
-    "votes": 0,
+    "votes": 10,
     "timer": 7000000,
     "statusId": 1,
     "correctAnswerId": null,
