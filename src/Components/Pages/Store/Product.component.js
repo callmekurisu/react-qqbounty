@@ -5,6 +5,12 @@ import Radio from '@material-ui/core/Radio';
 import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
 
+import PRODUCT_1 from '../../../Assets/images/gemBag.png';
+import PRODUCT_2 from '../../../Assets/images/gemBundle.png';
+import PRODUCT_3 from '../../../Assets/images/gemChest.png';
+
+const productImageList = [PRODUCT_1,PRODUCT_2,PRODUCT_3]
+
 export class Product extends React.Component {
 
   constructor(props) {
@@ -13,6 +19,7 @@ export class Product extends React.Component {
   }
 
   render() {
+    let sProductImage = productImageList[this.props.product.id -1];
 		return (
 			<>
         <Paper className="product-container" 
@@ -20,7 +27,7 @@ export class Product extends React.Component {
           elevation={2} >
           <div className="product-content-wrapper">
             <h1 className="product-name">{this.props.product.productName}</h1>
-            <img src="" className="product-image"/>
+            <img src={sProductImage} className="product-image"/>
             <h5 className="product-cost">Cost: {this.props.product.productCost} SATS</h5>
             <h5 className="product-credit">Credits: {this.props.product.productCredit} QQ</h5>
           </div>
@@ -37,8 +44,6 @@ export class Product extends React.Component {
             checkedIcon={<RadioButtonCheckedIcon fontSize="small" />}
           />
         </Paper>
-
-        {/* Paywall component for products */}
       </>
 		)
 	}

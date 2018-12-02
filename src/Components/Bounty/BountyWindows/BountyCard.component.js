@@ -25,7 +25,8 @@ class BountyCard extends React.PureComponent {
   renderSubjectChips = () => {
     if(this.props.bounty.subject !== null) {
       return this.props.bounty.subject.map(subject => {
-                return <Chip  label={subject.subject} 
+                return <Chip  key={subject.subject}
+                              label={subject.subject} 
                               className="bounty-card-chip"
                               color="primary"
                               />

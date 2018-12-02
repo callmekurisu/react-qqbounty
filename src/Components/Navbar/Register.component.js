@@ -44,7 +44,6 @@ export class Register extends React.Component {
 	}
 	
 	render() {
-		console.log("thing")
 		return (
 			<div className="register-wrapper">
         <Dialog
