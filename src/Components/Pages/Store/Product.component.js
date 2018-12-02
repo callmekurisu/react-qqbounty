@@ -20,8 +20,8 @@ export class Product extends React.Component {
           <div className="product-content-wrapper">
             <h1 className="product-name">{this.props.product.productName}</h1>
             <img src="" className="product-image"/>
-            <h5 className="product-cost">{this.props.product.productCost}</h5>
-            <h5 className="product-credit">{this.props.product.productCredit}</h5>
+            <h5 className="product-cost">Cost: {this.props.product.productCost} SATS</h5>
+            <h5 className="product-credit">Credits: {this.props.product.productCredit} QQ</h5>
           </div>
           <Radio
             ref={this.radioRef}
