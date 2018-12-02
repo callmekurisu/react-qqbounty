@@ -54,43 +54,49 @@ export class Login extends React.Component {
 					onClose={this.props.close}
           aria-labelledby="form-dialog-title"
         >
-          <DialogTitle id="form-dialog-title">Login</DialogTitle>
-          <DialogContent>
-            <TextField
-							id="outlined-adornment-username"
-							className="navbar-input"
-							variant="outlined"
-							label="username"
-							value={this.state.username}
-							onClick={this.stopDefault}
-							onChange={this.handleInputChange}
-						/>
-						<TextField
-							id="outlined-adornment-password"
-							className="navbar-input"
-							variant="outlined"
-							type={this.state.showPassword ? 'text' : 'password'}
-							label="password"
-							value={this.state.password}
-							onClick={this.stopDefault}
-							onChange={this.handleInputChange}
-							InputProps={{
-								endAdornment: (
-									<InputAdornment position="end">
-										<IconButton
-											className="show-password-btn"
-											aria-label="Toggle password visibility"
-											onClick={this.handleClickShowPassword}
-										>
-											{this.state.showPassword ? <VisibilityOff /> : <Visibility />}
-										</IconButton>
-									</InputAdornment>
-								),
-							}}
-						/>
-						<Button onClick={this.handleLoginClick} variant="contained" color="primary" id="login-btn">
-							Login
-						</Button>
+          <DialogTitle id="login-title">Login</DialogTitle>
+          <DialogContent id="login-content" className="flex-column">
+						<div className="flex-column xs-margin-column">
+							<TextField
+								id="outlined-adornment-username"
+								className="navbar-input"
+								variant="outlined"
+								label="username"
+								value={this.state.username}
+								onClick={this.stopDefault}
+								onChange={this.handleInputChange}
+							/>
+						</div>
+						<div className="flex-column xs-margin-column">
+							<TextField
+								id="outlined-adornment-password"
+								className="navbar-input"
+								variant="outlined"
+								type={this.state.showPassword ? 'text' : 'password'}
+								label="password"
+								value={this.state.password}
+								onClick={this.stopDefault}
+								onChange={this.handleInputChange}
+								InputProps={{
+									endAdornment: (
+										<InputAdornment position="end">
+											<IconButton
+												className="show-password-btn"
+												aria-label="Toggle password visibility"
+												onClick={this.handleClickShowPassword}
+											>
+												{this.state.showPassword ? <VisibilityOff /> : <Visibility />}
+											</IconButton>
+										</InputAdornment>
+									),
+								}}
+							/>
+						</div>
+						<div className="flex-column xs-margin-column">						
+							<Button onClick={this.handleLoginClick} variant="contained" color="primary" id="login-btn">
+								Login
+							</Button>
+						</div>
           </DialogContent>
         </Dialog>
 			</div>

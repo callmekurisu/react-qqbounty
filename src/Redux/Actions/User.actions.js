@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { snackbarTypes } from './Snackbar.actions';
-
+import { mainContentTypes } from './MainContent.actions';
 const SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
 export let jwtToken;
 
@@ -68,7 +68,7 @@ export const login = (pUsername, pPassword) => (dispatch) => {
     dispatch({
       type: snackbarTypes.SNACKBAR_ADD,
       payload: {
-        message: response.data.result.message
+        message: "Welcome back " + response.data.result.user.username
       }
     });
   })
@@ -77,6 +77,12 @@ export const login = (pUsername, pPassword) => (dispatch) => {
       type: userTypes.USER_LOGIN,
       payload: {
         login: false
+      }
+    });
+    dispatch({
+      type: snackbarTypes.SNACKBAR_ADD,
+      payload: {
+        message: "Cannot login"
       }
     });
   });
@@ -95,6 +101,12 @@ export const logout = () => (dispatch) => {
     payload: {
       message: "Logged out"
     }
+  });
+  dispatch({
+    type: mainContentTypes.CHANGE_PAGE,
+      payload: {
+        page: 'home'
+      }
   });
 }
 

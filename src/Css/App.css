@@ -5,11 +5,11 @@ body {
   display: flex;
   flex-direction: row;
 }
-
 .flex-column {
   display: flex;
   flex-direction: column;
 }
+.xs-margin-column { margin: 5px;}
 
 /*********************************
       NavBar
@@ -42,6 +42,13 @@ body {
   text-align: center;
   font-size: 3em;
 }
+
+/*********************************
+      Login
+*********************************/
+#login-title {
+  text-align: center;
+}
 /*********************************
       Submit Bounty
 *********************************/
@@ -66,8 +73,9 @@ body {
 #bounty-select-title {  margin: 0 20px 0 0; width: 200px; }
 #bounty-select-timer {  width: 300px;}
 #bounty-select-description { width: 100%; }
-#bounty-select-amount { width: 200px;}
+#bounty-select-amount   { width: 200px;}
 #bounty-select-subjects { height: 100px; }
+div[class^="SelectSubjects-"] { height: auto !important;}
 #bounty-select-subjects > div { height: auto !important; }
 
 
@@ -458,7 +466,6 @@ body {
 }
 .flex-center{
   justify-content: center;
-
 }
 
 .bounty-content-column-left-align{
