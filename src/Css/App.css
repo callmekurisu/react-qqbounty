@@ -1,7 +1,73 @@
+body {
+  margin: 0;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 /*********************************
       NavBar
 *********************************/
-#nav-logo { cursor: pointer; }
+#app-navbar { height: 10vh;}
+#nav-logo   { cursor: pointer; }
+
+/*********************************
+      Snackbar
+*********************************/
+.app-snackbar-message {
+  margin: 0;
+  font-size: small;
+}
+/*********************************
+      Advertisement Text
+*********************************/
+.advertise-text-wrapper {
+
+}
+
+.advertise-span {}
+.advertise-text {}
+
+.advertise-span {
+  border-top: 2px 
+}
+
+.advertise-text {
+  text-align: center;
+  font-size: 3em;
+}
+/*********************************
+      Submit Bounty
+*********************************/
+#submit-bounty-wrapper {
+  background-color: #d2d2d2;
+  padding: 14px;
+  margin: auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+#submit-bounty-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#bounty-select-title {  margin: 0 20px 0 0; width: 200px; }
+#bounty-select-timer {  width: 300px;}
+#bounty-select-description { width: 100%; }
+#bounty-select-amount { width: 200px;}
+#bounty-select-subjects { height: 100px; }
+
+.SelectSubjects-root-277 { height: 0px !important;}
+#submit-bounty-btn { width: 150px;}
 
 /*********************************
     Bounty Table 
@@ -16,10 +82,20 @@
 }
 
 .bounty-carousel-wrapper {
+  border: 0.1px dotted gray;
   display: inline-block;
   width: 100%;
   padding: 5px 30px;
   overflow-x: auto;
+  height: 170px;
+}
+
+.bounty-window-title {
+  font-weight: initial;
+  text-decoration: underline;
+  font-size: x-large;
+  margin: 3px auto;
+  color: #de9000;
 }
 
 .bounty-card {
@@ -27,7 +103,7 @@
   flex: 0 0 200px;
   background-color: #ffe1b6 !important;
   width: 200px;
-  height: 240px;
+  height: 155px;
   margin: 5px 5px;
   overflow: visible !important;
   display: inline-block;
@@ -74,9 +150,8 @@
 *********************************/
 .main-content-wrapper {
   background-color: white;
-  min-height: 70vh;
-  width: 100%;
-  margin: 10px 0px;
+  min-height: 80vh;
+  padding: 0 30px;
 }
 
 /*********************************
@@ -154,33 +229,189 @@
   justify-self: center;
 }
 
+
+.material-icons.md-36 { font-size: 46px; }
+
+.dialouge-title{
+  background: linear-gradient(rgb(252, 106, 54),rgb(236, 110, 110));
+  padding-top: 8px;
+}
+
+.dialouge-body{
+  background: ghostwhite;
+}
+
 #bounty-modal-main{
-  width: 60% !important;
-  max-width: 60% !important;
+  width: 50% !important;
+  max-width: 50% !important;
 }
 
 #bounty-modal-content-container{
+  padding-top: 10px;
   display: flex;
   justify-content: space-evenly;
-}
-
-#answer-main{
-  border: 1px solid orange;
+  flex-direction: column;
 }
 
 #answer-list-main{
-  border: 1px solid green;
-  
+  max-height: 500px;
+  overflow-y: scroll;
 }
+#answer-main{
+  
+  padding: 10px 10px 10px 0px;
+}
+
+
+#card-main{
+  background: #e0e0eb;
+}
+#card-body{
+  background: ghostwhite !important;
+}
+
+
+
+.answer-card-header{
+  height: 25px;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  background: linear-gradient(rgb(253, 182, 156),rgb(247, 167, 167));
+}
+
+.margin-auto{
+  margin: auto;
+}
+.margin-auto-rating {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 #answer-submission-main{
-  border: 1px solid blue;
   
 }
 #bounty-answers-main{
-  border: 1px solid black;
-  width: 60% !important;
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
 }
+
+
 #bounty-content-main{
-  border: 1px solid red;
-  width: 40% !important;
+  padding-top: 0px;
+  background: ghostwhite;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
+
+.bounty-content-column{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-space-between{
+  justify-content: space-between;
+
+}
+
+.bounty-content-footer{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.bounty-content-flex-start{
+  display: flex;
+  flex-direction: row;
+}
+
+.bounty-content-flex-end{
+  justify-content: flex-end;
+  display: flex;
+}
+
+.bounty-vote-button{
+  padding: 0px !important;
+  width:32px !important;
+  min-width:32px !important;
+  background:#f8f8ff;
+}
+
+.answer-button{
+  padding: 0px !important;
+  width:32px !important;
+  min-width:32px !important;
+}
+.answer-submit-button{
+  margin-top: 10px !important;
+}
+.answer-card-footer{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  border-top: .1px solid ghostwhite;
+}
+
+.answer-card-flex-start{
+  display: flex;
+  flex-direction: row;
+}
+
+.answer-card-flex-end{
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+
+.button-flex-end{
+  margin-left: auto;
+}
+.button-center{
+  margin: auto;
+  display: flex !important;
+}
+.flex-center{
+  justify-content: center;
+
+}
+
+.bounty-content-column-left-align{
+  align-self: flex-start;
+
+}
+
+.bounty-content-column-right-align{
+  align-self: flex-end;
+}
+
+/***********************************
+User Profile
+************************************/
+.container{
+  padding:5%;
+}
+.container .img{
+  text-align:center;
+}
+.container .profile-details{
+  border-left:3px solid #ded4da;
+}
+
+.profile-image {
+  display: flex;
+  justify-content: flex-start;
+  width: 25% !important;
+}
+
+
+/*******************************
+      footer
+*******************************/
+#footer {
+  height: 10vh;
+  width: 100%;
+  background-color: black;
+}
+

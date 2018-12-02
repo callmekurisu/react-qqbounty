@@ -8,7 +8,7 @@ export class PopularBountyWindow extends React.Component {
 		return (
       <>
         <div id="popular-bounty-window-wrapper" className="bounty-window-wrapper">
-          <h1 id="popular-bounty-window-title">Popular</h1>
+          <h1 className="bounty-window-title">Popular</h1>
           <BountyWindow bounties={this.props.bounties} />
         </div>
       </>
@@ -18,7 +18,7 @@ export class PopularBountyWindow extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    bounties: state.bounty.bounties
+    bounties: state.bounty.popularBounties.bounty_list.content
   }
 }
 

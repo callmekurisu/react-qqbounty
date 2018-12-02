@@ -44,12 +44,12 @@ const settings = {
 export class BountyWindow extends React.Component {
 
   renderBountyCarousel = (pBounties) => {
-    if(pBounties !== null) {
+    if(pBounties.length !== 0) {
       return  pBounties.map(bounty => {
                 return <BountyCard key={bounty.bountyId} bounty={bounty} />
               })
     } else {
-      return null;
+      return <div>No Bounties =(</div>;
     }
   }
 
@@ -69,7 +69,7 @@ export class BountyWindow extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    
+    bounty: state.bounty
   }
 }
 

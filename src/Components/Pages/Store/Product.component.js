@@ -18,18 +18,18 @@ export class Product extends React.Component {
         <Paper className="product-container" 
           elevation={2} >
           <div className="product-content-wrapper">
-            <h1 className="product-name">{this.props.product.product_name}</h1>
-            <img src="" className="prodtc-image"/>
-            <h5 className="product-cost">{this.props.product.product_cost}</h5>
-            <h5 className="product-credit">{this.props.product.product_credit}</h5>
+            <h1 className="product-name">{this.props.product.productName}</h1>
+            <img src="" className="product-image"/>
+            <h5 className="product-cost">{this.props.product.productCost}</h5>
+            <h5 className="product-credit">{this.props.product.productCredit}</h5>
           </div>
           <Radio
             ref={this.radioRef}
             className="product-radio-btn"
-            checked={this.props.selectedId === this.props.product.id}
-            onChange={() => this.props.selectProduct(this.props.product.id)}
-            onClick={() => this.props.selectProduct(this.props.product.id)}
-            value={this.props.product.id}
+            checked={this.props.selectedId === this.props.product.productId}
+            onChange={this.props.selectProduct(this.props.product.productId)}
+            onClick={this.props.selectProduct(this.props.product.productId)}
+            value={this.props.productId}
             color="orange"
             name="radio-button-demo"
             aria-label="E"
@@ -37,6 +37,8 @@ export class Product extends React.Component {
             checkedIcon={<RadioButtonCheckedIcon fontSize="small" />}
           />
         </Paper>
+
+        {/* Paywall component for products */}
       </>
 		)
 	}

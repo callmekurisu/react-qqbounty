@@ -1,17 +1,16 @@
 import axios from 'axios';
 import { environment } from './Environment';
-
-
 export const BountiesClient = axios.create({
   baseURL: environment.qqBountyContext+"bounties",
   headers: {
+    'Authorization': jwtToken,
     'Content-Type': 'application/json'
   }
 });
 
 export const AnswersClient = axios.create({
   baseURL: environment.qqBountyContext + "answers",
-  headers: {
+  headers: { 
     'Content-Type': 'application/json'
   }
 });
@@ -19,6 +18,7 @@ export const AnswersClient = axios.create({
 export const UsersClient = axios.create({
   baseURL: environment.qqBountyContext + "users",
   headers: {
+    'Authorization': jwtToken,
     'Content-Type': 'application/json'
   }
 });
@@ -26,6 +26,7 @@ export const UsersClient = axios.create({
 export const AWSClientBlank = axios.create({
   baseURL: "",
   headers: {
+    'Authorization': jwtToken,
     'Content-Type': 'application/json'
   }
 });
