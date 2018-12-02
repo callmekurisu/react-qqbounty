@@ -15,11 +15,12 @@ import AppSnackbar from './Commons/AppSnackbar.component';
 
 import * as storeActions from '../Redux/Actions/Store.actions';
 import * as bountyActions from '../Redux/Actions/Bounty.actions';
+import * as userActions from '../Redux/Actions/User.actions';
 
 export class MainContent extends React.Component {
 
 	componentDidMount() {
-	
+		this.props.setupUser();
 		this.props.getHighPay();
 		this.props.getNew();
 		this.props.getPopular();
@@ -76,10 +77,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
 	setUpStore: storeActions.setUp,
 	getPopular: bountyActions.getPopularBounties,
-	getOld: 	bountyActions.getOldBounties,
-	getNew:		bountyActions.getNewBounties,
-	getHighPay: bountyActions.getHighPayBounties
-
+	getOld: 		bountyActions.getOldBounties,
+	getNew:			bountyActions.getNewBounties,
+	getHighPay: bountyActions.getHighPayBounties,
+	setupUser:	userActions.setupUser
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainContent)

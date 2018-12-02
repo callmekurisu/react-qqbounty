@@ -9,6 +9,12 @@ import BountyCard from '../Bounty/BountyWindows/BountyCard.component';
 import SelectSubjects from './SubmitBounty/SelectSubjects';
 
 export class Dashboard extends React.Component {
+  constructor(props) {
+		super(props);
+		this.state = {
+			subjects: []
+		}
+  }
 
 	renderBountyCarousel = (pBounties) => {
     if(pBounties.length !== 0) {
@@ -18,7 +24,20 @@ export class Dashboard extends React.Component {
     } else {
       return null;
     }
-	}
+  }
+  
+  handleSubjectChange = (pSubjects) => {
+    let subjectArray = pSubjects.map(subject => subject.value);
+		this.setState({
+      subjects: subjectArray,
+    }, () => console.log(this.state.subjects));
+  }
+  
+  handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      console.log(this.state.subjects);
+    }
+  }
 	
   render() {
     let carouselSlides = this.renderBountyCarousel(this.props.bounties);
@@ -39,16 +58,12 @@ export class Dashboard extends React.Component {
           <h1 id="dashboard-title">
             Search by subjects
           </h1>
-          <SearchBar
-            onChange={() => console.log('onChange')}
-            onRequestSearch={() => console.log('onRequestSearch')}
-            style={{
-              margin: '0 auto',
-              maxWidth: 800
-            }}
-          />
         </div>
-        <SelectSubjects />
+        <div id="dashboard-select-subjects-wrapper">
+          <SelectSubjects 
+            changeSubjects={this.handleSubjectChange} 
+            />
+        </div>
         <div id="dashboard-content">
           <Slider
             {...settings} 
@@ -68,6 +83,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
+
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)

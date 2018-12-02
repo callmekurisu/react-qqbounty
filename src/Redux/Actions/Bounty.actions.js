@@ -3,7 +3,6 @@ import axios from 'axios';
 import { userTypes }      from './User.actions';
 import { snackbarTypes }  from './Snackbar.actions';
 
-let jwtToken = localStorage.getItem('JWT');
 const SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
 
 export const bountyTypes = {
@@ -31,7 +30,6 @@ export const getNewBounties = () => (dispatch) => {
     });
   })
   .catch(error => {
-    console.log("No bueno =(")
   });
 }
 
@@ -46,7 +44,6 @@ export const getOldBounties = () => (dispatch) => {
     });
   })
   .catch(error => {
-    console.log("No bueno =(")
   });
 }
 
@@ -61,7 +58,7 @@ export const getPopularBounties = () => (dispatch) => {
     });
   })
   .catch(error => {
-    console.log("No bueno =(")
+ 
   });
 }
 
@@ -76,31 +73,61 @@ export const getHighPayBounties = () => (dispatch) => {
     });
   })
   .catch(error => {
-    console.log("No bueno =(")
+
   });
 }
 
 export const getUserBounties = () => (dispatch) => {
-  axios.get(`${SERVER_ADDRESS}/bounties/user`,
-   { headers: {
-      'Authorization': `Bearer ${jwtToken}`
+  if(localStorage.getItem('JWT')) {
+    let jwtToken = localStorage.getItem('JWT');
+    axios.get(`${SERVER_ADDRESS}/bounties/user`,
+    { headers: {
+       'Authorization': `Bearer ${jwtToken}`
     }
-  })
-  .then((response) => { 
-    dispatch({
-      type: bountyTypes.GET_USER_BOUNTIES,
-        payload: {
-          userBounties: response.data.result
-        }
     })
-  })
+    .then((response) => { 
+      dispatch({
+        type: bountyTypes.GET_USER_BOUNTIES,
+          payload: {
+            userBounties: response.data.result
+          }
+      })
+    })
+  }
+}
+
+export const getSearchBounties = (pSubjects) => (dispatch) => {
+  let paramString = "";
+  if(pSubjects.length !== 0) {
+      paramString = "?"
+      pSubjects.map((subject)=>{
+          paramString = "subjects="+subject+"&"
+      })
+       paramString = paramString.substring(0,paramString.length-1);
+  }
+  if(localStorage.getItem('JWT')) {
+    let jwtToken = localStorage.getItem('JWT');
+    axios.get(`${SERVER_ADDRESS}+/bounties/subjects${paramString}`,
+      { headers: {
+        'Authorization': `Bearer ${jwtToken}`
+      }
+    })
+    .then((response) => { 
+      dispatch({
+        type: bountyTypes.GET_SEARCH_BOUNTIES,
+          payload: {
+            searchBounties: response.data.result
+          }
+      })
+    })
+  }
 }
 
 
 export const submitBounty = (state) => (dispatch) => {
-  console.log(state)
-  let jwtToken = localStorage.getItem("JWT");
-  axios.defaults.headers.common['Authorization'] = 'Bearer ' + jwtToken;
+  if(localStorage.getItem('JWT')) {
+    let jwtToken = localStorage.getItem('JWT');
+    axios.defaults.headers.common['Authorization'] = 'Bearer ' + jwtToken;
     axios.post(SERVER_ADDRESS+'/bounties',state)
     .then(response => {
       dispatch({
@@ -119,7 +146,7 @@ export const submitBounty = (state) => (dispatch) => {
     .catch(error => {
       
     });
-
+  }
 }
 
 export const openBountyModal = (pBounty) => (dispatch) => {

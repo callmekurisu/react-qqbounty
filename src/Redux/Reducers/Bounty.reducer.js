@@ -86,10 +86,316 @@ const initialState = {
   }]
   }},
 	searchBounties: {bounty_list:{
-    content: []
+    content: [{
+        "title": "title",
+        "bountyId": 12,
+        "description": "test bounties",
+        "submitted": 1542693600000,
+        "amount": 42,
+        "votes": 0,
+        "timer": 7000000,
+        "statusId": 1,
+        "correctAnswerId": null,
+        "picture": "",
+        "userId": 1,
+        "subject": [
+            {
+                "subjectId": 1,
+                "subject": "Math"
+            }
+        ]
+    },{
+        "title": "title",
+        "bountyId": 12,
+        "description": "test bounties",
+        "submitted": 1542693600000,
+        "amount": 42,
+        "votes": 0,
+        "timer": 7000000,
+        "statusId": 1,
+        "correctAnswerId": null,
+        "picture": "",
+        "userId": 1,
+        "subject": [
+            {
+                "subjectId": 1,
+                "subject": "Math"
+            }
+        ]
+    },{
+        "title": "title",
+        "bountyId": 12,
+        "description": "test bounties",
+        "submitted": 1542693600000,
+        "amount": 42,
+        "votes": 0,
+        "timer": 7000000,
+        "statusId": 1,
+        "correctAnswerId": null,
+        "picture": "",
+        "userId": 1,
+        "subject": [
+            {
+                "subjectId": 1,
+                "subject": "Math"
+            }
+        ]
+    },{
+        "title": "title",
+        "bountyId": 12,
+        "description": "test bounties",
+        "submitted": 1542693600000,
+        "amount": 42,
+        "votes": 0,
+        "timer": 7000000,
+        "statusId": 1,
+        "correctAnswerId": null,
+        "picture": "",
+        "userId": 1,
+        "subject": [
+            {
+                "subjectId": 1,
+                "subject": "Math"
+            }
+        ]
+    },{
+        "title": "title",
+        "bountyId": 12,
+        "description": "test bounties",
+        "submitted": 1542693600000,
+        "amount": 42,
+        "votes": 0,
+        "timer": 7000000,
+        "statusId": 1,
+        "correctAnswerId": null,
+        "picture": "",
+        "userId": 1,
+        "subject": [
+            {
+                "subjectId": 1,
+                "subject": "Math"
+            }
+        ]
+    },{
+        "title": "title",
+        "bountyId": 12,
+        "description": "test bounties",
+        "submitted": 1542693600000,
+        "amount": 42,
+        "votes": 0,
+        "timer": 7000000,
+        "statusId": 1,
+        "correctAnswerId": null,
+        "picture": "",
+        "userId": 1,
+        "subject": [
+            {
+                "subjectId": 1,
+                "subject": "Math"
+            }
+        ]
+    },{
+        "title": "title",
+        "bountyId": 12,
+        "description": "test bounties",
+        "submitted": 1542693600000,
+        "amount": 42,
+        "votes": 0,
+        "timer": 7000000,
+        "statusId": 1,
+        "correctAnswerId": null,
+        "picture": "",
+        "userId": 1,
+        "subject": [
+            {
+                "subjectId": 1,
+                "subject": "Math"
+            }
+        ]
+    },{
+        "title": "title",
+        "bountyId": 12,
+        "description": "test bounties",
+        "submitted": 1542693600000,
+        "amount": 42,
+        "votes": 0,
+        "timer": 7000000,
+        "statusId": 1,
+        "correctAnswerId": null,
+        "picture": "",
+        "userId": 1,
+        "subject": [
+            {
+                "subjectId": 1,
+                "subject": "Math"
+            }
+        ]
+    },{
+        "title": "title",
+        "bountyId": 12,
+        "description": "test bounties",
+        "submitted": 1542693600000,
+        "amount": 42,
+        "votes": 0,
+        "timer": 7000000,
+        "statusId": 1,
+        "correctAnswerId": null,
+        "picture": "",
+        "userId": 1,
+        "subject": [
+            {
+                "subjectId": 1,
+                "subject": "Math"
+            }
+        ]
+    },{
+        "title": "title",
+        "bountyId": 12,
+        "description": "test bounties",
+        "submitted": 1542693600000,
+        "amount": 42,
+        "votes": 0,
+        "timer": 7000000,
+        "statusId": 1,
+        "correctAnswerId": null,
+        "picture": "",
+        "userId": 1,
+        "subject": [
+            {
+                "subjectId": 1,
+                "subject": "Math"
+            }
+        ]
+    },{
+        "title": "title",
+        "bountyId": 12,
+        "description": "test bounties",
+        "submitted": 1542693600000,
+        "amount": 42,
+        "votes": 0,
+        "timer": 7000000,
+        "statusId": 1,
+        "correctAnswerId": null,
+        "picture": "",
+        "userId": 1,
+        "subject": [
+            {
+                "subjectId": 1,
+                "subject": "Math"
+            }
+        ]
+    },{
+        "title": "title",
+        "bountyId": 12,
+        "description": "test bounties",
+        "submitted": 1542693600000,
+        "amount": 42,
+        "votes": 0,
+        "timer": 7000000,
+        "statusId": 1,
+        "correctAnswerId": null,
+        "picture": "",
+        "userId": 1,
+        "subject": [
+            {
+                "subjectId": 1,
+                "subject": "Math"
+            }
+        ]
+    },{
+        "title": "title",
+        "bountyId": 12,
+        "description": "test bounties",
+        "submitted": 1542693600000,
+        "amount": 42,
+        "votes": 0,
+        "timer": 7000000,
+        "statusId": 1,
+        "correctAnswerId": null,
+        "picture": "",
+        "userId": 1,
+        "subject": [
+            {
+                "subjectId": 1,
+                "subject": "Math"
+            }
+        ]
+    },{
+        "title": "title",
+        "bountyId": 12,
+        "description": "test bounties",
+        "submitted": 1542693600000,
+        "amount": 42,
+        "votes": 0,
+        "timer": 7000000,
+        "statusId": 1,
+        "correctAnswerId": null,
+        "picture": "",
+        "userId": 1,
+        "subject": [
+            {
+                "subjectId": 1,
+                "subject": "Math"
+            }
+        ]
+    },{
+        "title": "title",
+        "bountyId": 12,
+        "description": "test bounties",
+        "submitted": 1542693600000,
+        "amount": 42,
+        "votes": 0,
+        "timer": 7000000,
+        "statusId": 1,
+        "correctAnswerId": null,
+        "picture": "",
+        "userId": 1,
+        "subject": [
+            {
+                "subjectId": 1,
+                "subject": "Math"
+            }
+        ]
+    },{
+        "title": "title",
+        "bountyId": 12,
+        "description": "test bounties",
+        "submitted": 1542693600000,
+        "amount": 42,
+        "votes": 0,
+        "timer": 7000000,
+        "statusId": 1,
+        "correctAnswerId": null,
+        "picture": "",
+        "userId": 1,
+        "subject": [
+            {
+                "subjectId": 1,
+                "subject": "Math"
+            }
+        ]
+    }]
   }},
   userBounties: {bounty_list:{
-    content: []
+    content: [{
+        "title": "title",
+        "bountyId": 12,
+        "description": "test bounties",
+        "submitted": 1542693600000,
+        "amount": 42,
+        "votes": 0,
+        "timer": 7000000,
+        "statusId": 1,
+        "correctAnswerId": null,
+        "picture": "",
+        "userId": 1,
+        "subject": [
+            {
+                "subjectId": 1,
+                "subject": "Math"
+            }
+        ]
+    }]
   }},
   modalOpen: false,
   modalBountyId: null,
@@ -98,13 +404,13 @@ const initialState = {
 
 export const bountyReducer = (state = initialState, action) => {
   switch (action.type) {
-		case bountyTypes.GET_NEW_BOUNTIES:
-      return {
+    case bountyTypes.GET_NEW_BOUNTIES:
+        return {
         ...state,
         newBounties: action.payload.newBounties
 		}
-		case bountyTypes.GET_OLD_BOUNTIES:
-      return {
+    case bountyTypes.GET_OLD_BOUNTIES:
+        return {
         ...state,
         oldBounties: action.payload.oldBounties
 		}
@@ -118,16 +424,21 @@ export const bountyReducer = (state = initialState, action) => {
         ...state,
         highPayBounties: action.payload.highPayBounties
 		}
-		case bountyTypes.GET_POPULAR_BOUNTIES:
-      return {
+    case bountyTypes.GET_POPULAR_BOUNTIES:
+         return {
         ...state,
         popularBounties: action.payload.popularBounties
-	}
-		case bountyTypes.GET_USER_BOUNTIES:
-      return {
+        }
+    case bountyTypes.GET_SEARCH_BOUNTIES:
+        return {
+        ...state,
+        searchBounties: action.payload.searchBounties
+        }
+    case bountyTypes.GET_USER_BOUNTIES:
+        return {
         ...state,
         userBounties: action.payload.userBounties
-    }
+        }
     case bountyTypes.OPEN_BOUNTY_MODAL:
       return {
         ...state,

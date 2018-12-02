@@ -67,7 +67,7 @@ body {
 #bounty-select-timer {  width: 300px;}
 #bounty-select-description { width: 100%; }
 #bounty-select-amount { width: 200px;}
-/* #bounty-select-subjects { height: 100px; } */
+#bounty-select-subjects { height: 100px; }
 #bounty-select-subjects > div { height: auto !important; }
 
 
@@ -201,6 +201,13 @@ body {
       Dashboard
 *********************************/
 #dashboard-header { margin: 20px auto;  text-align: center;}
+#dashboard-select-subjects-wrapper {
+  width: 400px !important;
+  margin: auto;
+  box-shadow: 1px 1px 10px #fda219;
+}
+#dashboard-select-subjects-wrapper > div {height: auto !important}
+#dashboard-content { margin: 30px auto;}
 /*********************************
       Store.component.js
 *********************************/
@@ -444,8 +451,11 @@ body {
 /***********************************
 User Profile
 ************************************/
-.container{
-  padding:5%;
+#user-profile-wrapper {
+  margin: 25px auto;
+  padding: 10px 30px;
+  width: 1000px;
+  box-shadow: 1px 1px 10px grey;
 }
 .container .img{
   text-align:center;
@@ -453,11 +463,14 @@ User Profile
 .container .profile-details{
   border-left:3px solid #ded4da;
 }
-
+#user-profile-img-wrapper {
+  border-right: 1px dotted;
+  height: 150px;
+  width: 150px;
+}
 .profile-image {
-  display: flex;
-  justify-content: flex-start;
-  width: 25% !important;
+  height: 100%;
+  width: 100%;
 }
 
 

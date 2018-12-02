@@ -15,6 +15,27 @@ export const userTypes = {
   SET_USER_INFO:      'SET_USER_INFO'
 }
 
+export const setupUser = () => (dispatch) => {
+  if(localStorage.getItem('JWT')) {
+    axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('JWT');
+    axios.get(SERVER_ADDRESS+'/users/info')
+    .then(response => {
+      dispatch({
+        type: userTypes.SET_USER_INFO,
+        payload: {
+          user: response.data.result.user
+        }
+      });
+      dispatch({
+        type: userTypes.USER_LOGIN,
+        payload: {
+          login: true
+        }
+      });
+    })
+  }
+}
+
 export const login = (pUsername, pPassword) => (dispatch) => {
   axios.post(SERVER_ADDRESS+'/users/login', {
     username: pUsername,
@@ -24,8 +45,6 @@ export const login = (pUsername, pPassword) => (dispatch) => {
     localStorage.setItem('JWT', response.data.result.jwt);
 
     setJwtToken();
-    console.log(response)
-
     axios.defaults.headers.common['Authorization'] = 'Bearer ' + response.data.result.jwt;
     axios.get(SERVER_ADDRESS+'/users/info')
     .then(response => {
