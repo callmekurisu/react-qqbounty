@@ -43,7 +43,16 @@ export const bountyReducer = (state = initialState, action) => {
         ...state,
         highPayBounties: action.payload.highPayBounties
 		}
-	
+		case bountyTypes.GET_POPULAR_BOUNTIES:
+      return {
+        ...state,
+        popularBounties: action.payload.popularBounties
+	}
+		case bountyTypes.GET_USER_BOUNTIES:
+      return {
+        ...state,
+        userBounties: action.payload.userBounties
+    }
     case bountyTypes.OPEN_BOUNTY_MODAL:
       return {
         ...state,

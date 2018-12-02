@@ -3,6 +3,7 @@ import { environment } from './Environment';
 export const BountiesClient = axios.create({
   baseURL: environment.qqBountyContext+"bounties",
   headers: {
+    'Authorization': jwtToken,
     'Content-Type': 'application/json'
   }
 });
@@ -17,12 +18,21 @@ export const AnswersClient = axios.create({
 export const UsersClient = axios.create({
   baseURL: environment.qqBountyContext + "users",
   headers: {
+    'Authorization': jwtToken,
     'Content-Type': 'application/json'
   }
 });
 
 export const AWSClientBlank = axios.create({
   baseURL: "",
+  headers: {
+    'Authorization': jwtToken,
+    'Content-Type': 'application/json'
+  }
+});
+
+export const LndClient = axios.create({
+  baseURL: environment.lndContext,
   headers: {
     'Content-Type': 'application/json'
   }
