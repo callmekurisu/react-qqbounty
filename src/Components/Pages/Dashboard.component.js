@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { connect } from 'react-redux';
 
 import BountyCard from '../Bounty/BountyWindows/BountyCard.component';
+import SelectSubjects from './SubmitBounty/SelectSubjects';
 
 export class Dashboard extends React.Component {
 
@@ -36,7 +37,7 @@ export class Dashboard extends React.Component {
 			<>
         <div id="dashboard-header">
           <h1 id="dashboard-title">
-            Search for bounty subjects: 
+            Search by subjects
           </h1>
           <SearchBar
             onChange={() => console.log('onChange')}
@@ -47,6 +48,7 @@ export class Dashboard extends React.Component {
             }}
           />
         </div>
+        <SelectSubjects />
         <div id="dashboard-content">
           <Slider
             {...settings} 

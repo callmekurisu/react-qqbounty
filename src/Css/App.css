@@ -14,7 +14,7 @@ body {
 /*********************************
       NavBar
 *********************************/
-#app-navbar { height: 10vh;}
+/* #app-navbar { height: 100px;} */
 #nav-logo   { cursor: pointer; }
 
 /*********************************
@@ -46,14 +46,17 @@ body {
       Submit Bounty
 *********************************/
 #submit-bounty-wrapper {
-  background-color: #d2d2d2;
+  box-shadow: 2px 2px 10px;
+  background-color: #f7f7f7;
   padding: 14px;
-  margin: auto;
+  margin: 20px auto;
+  border-radius: 5px;
   width: 80%;
   display: flex;
   flex-direction: column;
 }
 
+#submit-bounty-header { color: #f9bd60;}
 #submit-bounty-content {
   width: 100%;
   display: flex;
@@ -64,17 +67,23 @@ body {
 #bounty-select-timer {  width: 300px;}
 #bounty-select-description { width: 100%; }
 #bounty-select-amount { width: 200px;}
-#bounty-select-subjects { height: 100px; }
+/* #bounty-select-subjects { height: 100px; } */
+#bounty-select-subjects > div { height: auto !important; }
 
-.SelectSubjects-root-277 { height: 0px !important;}
-#submit-bounty-btn { width: 150px;}
+
+.SelectSubjects-root-277 { height: auto !important;}
+#submit-bounty-btn { 
+  align-self: flex-end;
+  width: 150px;
+  margin: 15px 0px 0px 0px;
+}
 
 /*********************************
     Bounty Table 
 ***********************************/
 .bounty-window-wrapper {
   max-width:85%;
-  margin: auto;
+  margin: 25px auto;
 }
 
 .slick-prev:before, .slick-next:before{
@@ -82,26 +91,26 @@ body {
 }
 
 .bounty-carousel-wrapper {
-  border: 0.1px dotted gray;
+  box-shadow: 1px 1px 10px grey;
   display: inline-block;
   width: 100%;
   padding: 5px 30px;
   overflow-x: auto;
-  height: 170px;
+  min-height: 180px;
 }
 
 .bounty-window-title {
   font-weight: initial;
   text-decoration: underline;
   font-size: x-large;
-  margin: 3px auto;
+  margin: 13px auto;
   color: #de9000;
 }
 
 .bounty-card {
+  box-shadow: 1px 1px 10px grey !important;
   border: 0.3px solid;
   flex: 0 0 200px;
-  background-color: #ffe1b6 !important;
   width: 200px;
   height: 155px;
   margin: 5px 5px;
@@ -109,9 +118,35 @@ body {
   display: inline-block;
 }
 
-.bounty-card:hover {
-  cursor: pointer;
+.bounty-card-main   { height: 120px; margin: 5px;}
+.bounty-card-title  { margin: 0 !important;}
+.bounty-card-content {
+  display: inline-block  !important;
+  width: -webkit-fill-available   !important;
+  height: -webkit-fill-available  !important;
+  padding: 0px !important;
 }
+
+.bounty-card-chip {
+  display: inline;
+  cursor: pointer !important;
+  font-size: 12px !important;
+  height: 20px !important;
+}
+
+.bounty-card-footer {
+  position: relative;
+  text-align: center;
+  color: #fff12e;
+  width: 100.5%;
+  background-color: #5539ff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  left: -0.2px;
+  bottom: -0.8px;
+}
+
+.bounty-card:hover {  cursor: pointer;}
 
 .bounty-window-fade-left {
   flex: 0 0 40px;
@@ -163,6 +198,10 @@ body {
 }
 
 /*********************************
+      Dashboard
+*********************************/
+#dashboard-header { margin: 20px auto;  text-align: center;}
+/*********************************
       Store.component.js
 *********************************/
 #store-wrapper {
@@ -170,21 +209,36 @@ body {
   flex-direction: column;
 }
 
-#store-header {
-  text-align: center;
-}
-
+#store-header {  width: 700px; margin: 15px auto; text-align: center;}
+#store-header-underline {    width: 100%;
+  border-bottom: 4px solid orange;}
 #store-shelf {
   display: flex;
   justify-content: center;
 }
 
 .product-container {
+  cursor: pointer;
   height: 300px;
   width: 180px;
   display: flex;
   flex-direction: column;
   margin: 10px;
+}
+
+.product-container:active {animation: shake 0.5s};
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
 .product-content-wrapper {
@@ -195,6 +249,7 @@ body {
 }
 
 .product-name {
+  font-size: xx-large;
   margin: auto;
   text-align: center;
 }
@@ -211,7 +266,6 @@ body {
   margin: auto;
 }
 
-.product-
 .product-radio-btn {
   color: #FFBD2F !important;
   margin: auto !important;
@@ -224,6 +278,7 @@ body {
 }
 
 #purchase-btn {
+  margin: 10px auto;
   height: 30px;
   width: 140px;
   justify-self: center;

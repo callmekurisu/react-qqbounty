@@ -25,19 +25,33 @@ class BountyCard extends React.PureComponent {
   renderSubjectChips = () => {
     if(this.props.bounty.subject !== null) {
       return this.props.bounty.subject.map(subject => {
-                return <Chip label={subject} className="bounty-card-chip"/>
+                return <Chip  label={subject.subject} 
+                              className="bounty-card-chip"
+                              color="primary"
+                              />
               })
     } else return null;
   }
 
   render() {
     let tChips = this.renderSubjectChips();
-
+  
     return (
       <Card className="bounty-card" onClick={() => this.props.openModal(this.props.bounty)}>
-        <CardHeader>
-          {tChips}
-        </CardHeader>
+        <CardContent className="bounty-card-content">
+          <div className="bounty-card-main">
+            <h6 className="bounty-card-title">
+              {this.props.bounty.title}
+            </h6>
+            {tChips}
+            <p className="bounty-card-description">
+              {this.props.bounty.description}
+            </p>
+          </div>
+          <div className="bounty-card-footer">
+            {this.props.bounty.amount}
+          </div>
+        </CardContent>
       </Card>
     );
   }

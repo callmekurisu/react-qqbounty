@@ -16,21 +16,21 @@ export class Product extends React.Component {
 		return (
 			<>
         <Paper className="product-container" 
+          onClick={() => this.props.selectProduct(this.props.product.id)}
           elevation={2} >
           <div className="product-content-wrapper">
             <h1 className="product-name">{this.props.product.productName}</h1>
             <img src="" className="product-image"/>
-            <h5 className="product-cost">{this.props.product.productCost}</h5>
-            <h5 className="product-credit">{this.props.product.productCredit}</h5>
+            <h5 className="product-cost">Cost: {this.props.product.productCost} SATS</h5>
+            <h5 className="product-credit">Credits: {this.props.product.productCredit} QQ</h5>
           </div>
           <Radio
             ref={this.radioRef}
             className="product-radio-btn"
-            checked={this.props.selectedId === this.props.product.productId}
-            onChange={this.props.selectProduct(this.props.product.productId)}
-            onClick={this.props.selectProduct(this.props.product.productId)}
-            value={this.props.productId}
-            color="orange"
+            checked={this.props.selectedId === this.props.product.id}
+            onClick={() => this.props.selectProduct(this.props.product.id)}
+            value={this.props.product.id}
+            color="secondary"
             name="radio-button-demo"
             aria-label="E"
             icon={<RadioButtonUncheckedIcon fontSize="small" />}
