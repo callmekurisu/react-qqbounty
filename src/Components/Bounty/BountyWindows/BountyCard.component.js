@@ -22,44 +22,22 @@ import * as bountyActions from '../../../Redux/Actions/Bounty.actions';
 
 class BountyCard extends React.PureComponent {
  
+  renderSubjectChips = () => {
+    if(this.props.bounty.subject !== null) {
+      return this.props.bounty.subject.map(subject => {
+                return <Chip label={subject} className="bounty-card-chip"/>
+              })
+    } else return null;
+  }
+
   render() {
+    let tChips = this.renderSubjectChips();
+
     return (
       <Card className="bounty-card" onClick={() => this.props.openModal(this.props.bounty)}>
         <CardHeader>
-          
+          {tChips}
         </CardHeader>
-        <Chip label="Basic Chip" className="bounty-card-chip" /> 
-        {/* <CardHeader
-          avatar={
-            <Avatar aria-label="Recipe" className={classes.avatar}>
-              QQ
-            </Avatar>
-          }
-          action={
-            <IconButton onClick="">
-              <MoreVertIcon />
-            </IconButton>
-          }
-          title={this.props.bounty.subject[0].subject}
-          subheader={time(this.props.bounty.submitted)}
-        />
-        <CardMedia
-          className={classes.media}
-          image="https://orig00.deviantart.net/144d/f/2017/327/0/6/dukeprey22_by_wesker500-dbulan7.png"
-          title="QQBounty"
-        />
-        <CardContent>
-          <Typography component="p">
-           {this.props.bounty.description}
-          </Typography>
-            <br/>
-            <Typography paragraph>
-              Amount: ${this.props.bounty.amount} SATS
-            </Typography>
-            <Typography paragraph>
-              Expiration: {time(this.props.bounty.submitted+this.props.bounty.timer)}
-            </Typography>
-          </CardContent> */}
       </Card>
     );
   }
