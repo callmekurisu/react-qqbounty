@@ -1,6 +1,7 @@
 import { bountyTypes } from "../../Redux/Actions/Bounty.actions";
 
 const initialState = {
+
 	newBounties:  {"bounty_list": {
 		"content": [
 			{

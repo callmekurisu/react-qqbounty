@@ -229,35 +229,154 @@ body {
   justify-self: center;
 }
 
+
+.material-icons.md-36 { font-size: 46px; }
+
+.dialouge-title{
+  background: linear-gradient(rgb(252, 106, 54),rgb(236, 110, 110));
+  padding-top: 8px;
+}
+
+.dialouge-body{
+  background: ghostwhite;
+}
+
 #bounty-modal-main{
-  width: 60% !important;
-  max-width: 60% !important;
+  width: 50% !important;
+  max-width: 50% !important;
 }
 
 #bounty-modal-content-container{
+  padding-top: 10px;
   display: flex;
   justify-content: space-evenly;
-}
-
-#answer-main{
-  border: 1px solid orange;
+  flex-direction: column;
 }
 
 #answer-list-main{
-  border: 1px solid green;
-  
+  max-height: 500px;
+  overflow-y: scroll;
 }
+#answer-main{
+  
+  padding: 10px 10px 10px 0px;
+}
+
+
+#card-main{
+  background: #e0e0eb;
+}
+#card-body{
+  background: ghostwhite !important;
+}
+
+
+
+.answer-card-header{
+  height: 25px;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  background: linear-gradient(rgb(253, 182, 156),rgb(247, 167, 167));
+}
+
+.margin-auto{
+  margin: auto;
+}
+
 #answer-submission-main{
-  border: 1px solid blue;
+  border: 1px solid lightpink;
   
 }
 #bounty-answers-main{
-  border: 1px solid black;
-  width: 60% !important;
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
 }
+
+
 #bounty-content-main{
-  border: 1px solid red;
-  width: 40% !important;
+  padding-top: 0px;
+  background: ghostwhite;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.bounty-content-column{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-space-between{
+  justify-content: space-between;
+
+}
+
+.bounty-content-footer{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.bounty-content-flex-start{
+  display: flex;
+  flex-direction: row;
+}
+
+.bounty-content-flex-end{
+  justify-content: flex-end;
+  display: flex;
+}
+
+.bounty-vote-button{
+  padding: 0px !important;
+  width:32px !important;
+  min-width:32px !important;
+  background:#f8f8ff;
+}
+
+.answer-button{
+  padding: 0px !important;
+  width:32px !important;
+  min-width:32px !important;
+}
+.answer-submit-button{
+  margin-top: 10px !important;
+}
+.answer-card-footer{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.answer-card-flex-start{
+  display: flex;
+  flex-direction: row;
+}
+
+.answer-card-flex-end{
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+
+.button-flex-end{
+  width: 160px;
+  justify-content: flex-end;
+}
+.flex-center{
+  justify-content: center;
+
+}
+
+.bounty-content-column-left-align{
+  align-self: flex-start;
+
+}
+
+.bounty-content-column-right-align{
+  align-self: flex-end;
 }
 
 /*******************************

@@ -3,7 +3,10 @@ import React from 'react';
 import AnswerListComponent from '../Answers/AnswerList.component';
 import AnswerSubmissionComponent from '../Answers/AnswerSubmission.component';
 import {BountiesClient} from '../../AxiosClients/qqBountyClient';
-
+import {Button } from 'reactstrap';
+import axios from 'axios';
+const REACT_APP_SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
+let jwtToken = localStorage.getItem('JWT');
 class BountyAnswersComponent extends React.Component {
 	constructor(props) {
 		super(props);
@@ -15,12 +18,19 @@ class BountyAnswersComponent extends React.Component {
 	}
 
 	componentDidMount(){
-		BountiesClient.get(`${this.props.bounty.bountyId}/answers`)
+		axios.get(`${REACT_APP_SERVER_ADDRESS}/bounties/${this.props.bounty.bountyId}/answers`,
+		{
+			headers: {
+			'Authorization': `Bearer ${jwtToken}`
+		  }
+		})
 		.then(data => {
+			console.log(data);
 			this.setState({
 				...this.state,
-				answers: data.data.result.answer_list
+				answers: data.data.result.answers.content
 			})
+			console.log(this.state.answers);
 		}).catch(err => {
 			console.log(err);
 		});
@@ -54,9 +64,10 @@ class BountyAnswersComponent extends React.Component {
 		
 		return (
 			<div id="bounty-answers-main">
-				<h1>Bounty Answers</h1>
-					{view}
-				<button onClick={this.handleSubmitAnswerClick}> {this.state.submittingAnswer ? 'Write an Answer' : 'Back'}</button >
+				{view}
+				<div className='button-flex-end'>
+				<Button  className='answer-submit-button' color='primary' onClick={this.handleSubmitAnswerClick}> {this.state.submittingAnswer ? 'Write an Answer' : 'Back'}</Button >
+				</div>
 			</div>
 		);
 	}
