@@ -4,7 +4,7 @@ import WelcomeBanner from './Commons/WelcomeBanner.component';
 import Home from './Pages/Home.component';
 import Store from './Pages/Store.component';
 import Dashboard from './Pages/Dashboard.component';
-import UserProfile from './Pages/UserProfile.component';
+import UserProfile from './Pages/UserProfile/UserProfile.component';
 
 import BountyModal from './Bounty/BountyModal.component';
 import AppSnackbar from './Commons/AppSnackbar.component';

@@ -1,12 +1,15 @@
 import { BountiesClient } from '../../AxiosClients/qqBountyClient';
-
+let jwt = localStorage.getItem('jwt');
+console.log(`jwt: ${jwt}`);
 export const bountyTypes = {
   PREVIEW_BOUNTY:     'PREVIEW_BOUNTY',
   OPEN_BOUNTY_MODAL:  'OPEN_BOUNTY_MODAL',
   CLOSE_BOUNTY_MODAL: 'CLOSE_BOUNTY_MODAL'
 }
 
+
 export const getInitBounties = () => (dispatch) => {
+ ;
   BountiesClient.get()
   .then((response) => {
     dispatch({

@@ -2,7 +2,11 @@ import axios from 'axios';
 import { snackbarTypes } from './Snackbar.actions';
 
 const SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
+export let jwtToken;
 
+function setJwtToken(){
+  jwtToken = localStorage.getItem('JWT');
+}
 export const userTypes = {
   USER_LOGIN:   'USER_LOGIN',
   USER_LOGOUT:  'USER_LOGOUT',
@@ -17,6 +21,7 @@ export const login = (pUsername, pPassword) => (dispatch) => {
   })
   .then(response => {
     localStorage.setItem('JWT', response.data.result.jwt);
+    setJwtToken();
     console.log(response)
     dispatch({
       type: userTypes.USER_LOGIN,
