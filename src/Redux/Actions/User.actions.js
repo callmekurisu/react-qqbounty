@@ -49,7 +49,7 @@ export const login = (pUsername, pPassword) => (dispatch) => {
     dispatch({
       type: userTypes.USER_LOGIN,
       payload: {
-        login: true
+        login: false
       }
     });
   });

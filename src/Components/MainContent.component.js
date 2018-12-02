@@ -12,11 +12,16 @@ import BountyModal from './Bounty/BountyModal.component';
 import AppSnackbar from './Commons/AppSnackbar.component';
 
 import * as storeActions from '../Redux/Actions/Store.actions';
+import * as bountyActions from '../Redux/Actions/Bounty.actions';
 
 export class MainContent extends React.Component {
 
 	componentDidMount() {
 		// this.props.setUpStore();
+		this.props.getHighPay();
+		this.props.getNew();
+		this.props.getPopular();
+		this.props.getOld();
 	}
 
 	renderPage = () => {
@@ -66,7 +71,12 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-	setUpStore: storeActions.setUp
+	setUpStore: storeActions.setUp,
+	getPopular: bountyActions.getPopularBounties,
+	getOld: 	bountyActions.getOldBounties,
+	getNew:		bountyActions.getNewBounties,
+	getHighPay: bountyActions.getHighPayBounties
+
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainContent)

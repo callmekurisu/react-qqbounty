@@ -9,9 +9,10 @@ let jwtToken = localStorage.getItem('JWT');
 class AnswerSubmissionComponent extends React.Component {
 	constructor(props) {
 		super(props);
+		console.log(props);
 		this.state = {
 			description: '',
-			bountyId: 1
+			bountyId: this.props.bounty.bountyId
 		}
 	}
 
@@ -26,7 +27,7 @@ class AnswerSubmissionComponent extends React.Component {
 			'Authorization': `Bearer ${jwtToken}`
 		  }})
 		.then(res => {
-			this.props.updateAnswers(res.data.result.answer);
+			this.props.updateAnswers(res.data.result.answers);
 		})
 		.catch(err => {
 			console.log(err);
