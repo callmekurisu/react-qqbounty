@@ -42,6 +42,7 @@ export class SubmitBounty extends React.Component {
 	}
 
 	handleSubjectChange = (pSubjects) => {
+    let subjectArray = pSubjects.map(subject => subject.value);
 		this.setState({
       subjects: pSubjects,
     });
