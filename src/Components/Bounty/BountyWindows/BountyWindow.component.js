@@ -69,7 +69,7 @@ export class BountyWindow extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    
+    bounty: state.bounty
   }
 }
 

@@ -13,8 +13,6 @@ export class Product extends React.Component {
   }
 
   render() {
-    console.log("1");
-    console.log(this.props)
 		return (
 			<>
         <Paper className="product-container" 
@@ -28,10 +26,10 @@ export class Product extends React.Component {
           <Radio
             ref={this.radioRef}
             className="product-radio-btn"
-            checked={this.props.selectedId === this.props.product.id}
-            onChange={() => this.props.selectProduct(this.props.product.id)}
-            onClick={() => this.props.selectProduct(this.props.product.id)}
-            value={this.props.product.id}
+            checked={this.props.selectedId === this.props.product.productId}
+            onChange={this.props.selectProduct(this.props.product.productId)}
+            onClick={this.props.selectProduct(this.props.product.productId)}
+            value={this.props.productId}
             color="orange"
             name="radio-button-demo"
             aria-label="E"
@@ -39,6 +37,8 @@ export class Product extends React.Component {
             checkedIcon={<RadioButtonCheckedIcon fontSize="small" />}
           />
         </Paper>
+
+        {/* Paywall component for products */}
       </>
 		)
 	}

@@ -7,10 +7,10 @@ import * as storeActions from '../../../Redux/Actions/Store.actions';
 
 export class StoreShelf extends React.Component {
   
-  renderProductShelf = () => {
+  renderProductShelf = () =>  {
     if(this.props.products.length !== 0) {
       return this.props.products.map( product => {
-        return <Product key={product.id} product={product} />
+        return <Product key={product.productId} product={product} />
       })
     } else return null;
   }
