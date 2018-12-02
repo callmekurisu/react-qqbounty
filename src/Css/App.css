@@ -273,10 +273,13 @@ body {
 
 
 .answer-card-header{
-  height: 25px;
+  height: 30px;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
+  padding-right: 0px !important;
   background: linear-gradient(rgb(253, 182, 156),rgb(247, 167, 167));
+  display: flex;
+  justify-content: space-between;
 }
 
 .margin-auto{
@@ -314,6 +317,10 @@ body {
 
 }
 
+.colorRed{
+  color: Red;
+}
+
 .bounty-content-footer{
   display: flex;
   flex-direction: row;
@@ -343,6 +350,14 @@ body {
   width:32px !important;
   min-width:32px !important;
 }
+
+.answer-button-header{
+  padding: 0px !important;
+  height:32px !important;
+  min-width:32px !important;
+}
+
+
 .answer-submit-button{
   margin-top: 10px !important;
 }
@@ -354,17 +369,24 @@ body {
   border-top: .1px solid ghostwhite;
 }
 
+
 .answer-card-flex-start{
   display: flex;
   flex-direction: row;
 }
 
+.answer-header-card-flex-end{
+  justify-content: flex-end;
+  font-size: 20px;
+}
 .answer-card-flex-end{
   justify-content: flex-end;
   margin-right: 10px;
 }
 
-
+.fontSize20{
+  font-size: 20px !important;
+}
 .button-flex-end{
   margin-left: auto;
 }

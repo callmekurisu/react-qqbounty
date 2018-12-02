@@ -52,10 +52,10 @@ class BountyContentComponent extends React.Component {
             </div>
             <div className='bounty-content-flex-end'>
             <Button className ="bounty-vote-button" size="small" color="black" onClick={() => this.vote(1)}>
-									<MdThumbUp className='.material-icons.md-36' />
+									<MdThumbUp className='fontSize20' />
 								</Button>
                 <Button className ="bounty-vote-button" size="small" color="black" onClick={() => this.vote(-1)}>
-									<MdThumbDown className='.material-icons.md-36' />
+									<MdThumbDown className='fontSize20' />
 								</Button>
               <div> Rating: {this.state.votes}</div>
             </div>
