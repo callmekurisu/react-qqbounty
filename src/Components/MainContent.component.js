@@ -6,6 +6,7 @@ import Store from './Pages/Store.component';
 import Dashboard from './Pages/Dashboard.component';
 import UserProfile from './Pages/UserProfile.component';
 import SubmitBounty from './Pages/SubmitBounty.component';
+import AdvertisementText from './Commons/AdvertisementText.component';
 
 import BountyModal from './Bounty/BountyModal.component';
 import AppSnackbar from './Commons/AppSnackbar.component';

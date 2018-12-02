@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from "react-slick";
+import SearchBar from 'material-ui-search-bar'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { connect } from 'react-redux';
@@ -33,11 +34,26 @@ export class Dashboard extends React.Component {
 
 		return (
 			<>
-        <Slider
-          {...settings} 
-        >
-          {carouselSlides}
-        </Slider>
+        <div id="dashboard-header">
+          <h1 id="dashboard-title">
+            Search for bounty subjects: 
+          </h1>
+          <SearchBar
+            onChange={() => console.log('onChange')}
+            onRequestSearch={() => console.log('onRequestSearch')}
+            style={{
+              margin: '0 auto',
+              maxWidth: 800
+            }}
+          />
+        </div>
+        <div id="dashboard-content">
+          <Slider
+            {...settings} 
+          >
+            {carouselSlides}
+          </Slider>
+        </div>
       </>
 		)
 	} 

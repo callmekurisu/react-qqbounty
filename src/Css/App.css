@@ -1,3 +1,6 @@
+body {
+  margin: 0;
+}
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -11,8 +14,34 @@
 /*********************************
       NavBar
 *********************************/
-#nav-logo { cursor: pointer; }
+#app-navbar { height: 10vh;}
+#nav-logo   { cursor: pointer; }
 
+/*********************************
+      Snackbar
+*********************************/
+.app-snackbar-message {
+  margin: 0;
+  font-size: small;
+}
+/*********************************
+      Advertisement Text
+*********************************/
+.advertise-text-wrapper {
+
+}
+
+.advertise-span {}
+.advertise-text {}
+
+.advertise-span {
+  border-top: 2px 
+}
+
+.advertise-text {
+  text-align: center;
+  font-size: 3em;
+}
 /*********************************
       Submit Bounty
 *********************************/
@@ -53,6 +82,7 @@
 }
 
 .bounty-carousel-wrapper {
+  border: 0.1px dotted gray;
   display: inline-block;
   width: 100%;
   padding: 5px 30px;
@@ -120,9 +150,8 @@
 *********************************/
 .main-content-wrapper {
   background-color: white;
-  min-height: 70vh;
-  width: 100%;
-  margin: 10px 0px;
+  min-height: 80vh;
+  padding: 0 30px;
 }
 
 /*********************************
@@ -229,4 +258,13 @@
 #bounty-content-main{
   border: 1px solid red;
   width: 40% !important;
+}
+
+/*******************************
+      footer
+*******************************/
+#footer {
+  height: 10vh;
+  width: 100%;
+  background-color: black;
 }

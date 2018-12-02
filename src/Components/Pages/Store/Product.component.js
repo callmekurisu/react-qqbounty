@@ -13,6 +13,8 @@ export class Product extends React.Component {
   }
 
   render() {
+    console.log("1");
+    console.log(this.props)
 		return (
 			<>
         <Paper className="product-container" 
