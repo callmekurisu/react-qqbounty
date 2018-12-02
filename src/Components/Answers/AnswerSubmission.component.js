@@ -3,7 +3,6 @@ import TextField from "@material-ui/core/TextField";
 import { AnswersClient } from '../../AxiosClients/qqBountyClient';
 import axios from 'axios';
 const REACT_APP_SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
-let jwtToken = localStorage.getItem('JWT');
 //import * as clickerActions from '../../Redux/Actions/Clicker.actions';
 
 
@@ -23,10 +22,8 @@ class AnswerSubmissionComponent extends React.Component {
 			"description": this.state.description,
 			"bountyId": this.state.bountyId
 		}
-		
-		axios.post(	`${REACT_APP_SERVER_ADDRESS}/answers`,answerObject,{headers: {
-			'Authorization': `Bearer ${jwtToken}`
-		  }})
+		axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('JWT');
+		axios.post(	`${REACT_APP_SERVER_ADDRESS}/answers`,answerObject)
 		.then(res => {
 			this.props.updateAnswers(res.data.result.answers);
 		})

@@ -23,8 +23,6 @@ class AnswerComponent extends React.Component {
 
 
 	vote = (voteValue) => {
-		let jwtToken = localStorage.getItem('JWT');
-		console.log(jwtToken);
 		axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('JWT');
 		axios.patch(`${REACT_APP_SERVER_ADDRESS}answers/${this.props.answer.answerId}/vote?voteValue=${voteValue}`,
 			).then(() => {
@@ -53,25 +51,17 @@ class AnswerComponent extends React.Component {
 					</CardContent>
 						<CardContent  className='answer-card-body'>
 							{this.props.answer.description}
-
-
 						</CardContent>
 			
 
 					<div className='answer-card-footer'>
 						<div className='answer-card-flex-start'>
-							<CardActionArea>
-								<Button className ="answer-button" size="small" color="black" onClick={() => this.vote(1)}>
+								<Button className ="answer-button" size="small" color="default" onClick={() => this.vote(1)}>
 									<MdThumbUp className='.material-icons.md-36' />
 								</Button>
-							</CardActionArea>
-							<CardActionArea>
-								<Button className ="answer-button" size="small" color="black" onClick={() => this.vote(-1)}>
+								<Button className ="answer-button" size="small" color="default" onClick={() => this.vote(-1)}>
 									<MdThumbDown className='.material-icons.md-36' />
 								</Button>
-							</CardActionArea>
-						
-
 						</div>
 						<div className='margin-auto-rating answer-card-flex-start'>
 								{`Rating: ${this.state.votes}`}

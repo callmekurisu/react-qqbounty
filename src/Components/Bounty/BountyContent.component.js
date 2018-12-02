@@ -18,8 +18,6 @@ class BountyContentComponent extends React.Component {
 	}
 
   vote = (voteValue) => {
-		let jwtToken = localStorage.getItem('JWT');
-		console.log(jwtToken);
 		axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('JWT');
 		axios.patch(`${REACT_APP_SERVER_ADDRESS}bounties/${this.props.bounty.bountyId}/vote?voteValue=${voteValue}`,
 			).then(() => {
