@@ -59,7 +59,7 @@ class BountyAnswersComponent extends React.Component {
 		if (this.state.submittingAnswer) {
 			view = <AnswerListComponent answers={this.state.answers} />
 		} else {
-			view = <AnswerSubmissionComponent updateAnswers={this.updateAnswers.bind(this)} />;
+			view = <AnswerSubmissionComponent bounty={this.props.bounty} updateAnswers={this.updateAnswers.bind(this)} />;
 		}
 		
 		return (
