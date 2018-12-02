@@ -282,9 +282,12 @@ body {
 .margin-auto{
   margin: auto;
 }
+.margin-auto-rating {
+  margin-top: auto;
+  margin-bottom: auto;
+}
 
 #answer-submission-main{
-  border: 1px solid lightpink;
   
 }
 #bounty-answers-main{
@@ -348,6 +351,7 @@ body {
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+  border-top: .1px solid ghostwhite;
 }
 
 .answer-card-flex-start{
@@ -362,8 +366,11 @@ body {
 
 
 .button-flex-end{
-  width: 160px;
-  justify-content: flex-end;
+  margin-left: auto;
+}
+.button-center{
+  margin: auto;
+  display: flex !important;
 }
 .flex-center{
   justify-content: center;

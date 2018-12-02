@@ -6,6 +6,7 @@ const REACT_APP_SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
 let jwtToken = localStorage.getItem('JWT');
 //import * as clickerActions from '../../Redux/Actions/Clicker.actions';
 
+
 class AnswerSubmissionComponent extends React.Component {
 	constructor(props) {
 		super(props);
@@ -41,8 +42,11 @@ class AnswerSubmissionComponent extends React.Component {
 		})
 	}
 
+
+	
 	render() {
 		return (
+			
 			<div id="answer-submission-main">
 				<form onSubmit={this.submit}>
 					<TextField
@@ -55,12 +59,14 @@ class AnswerSubmissionComponent extends React.Component {
 						fullWidth
 						value={this.state.description}
 						onChange={this.descriptionChange}
+						color="black"
 					/>
-
-					<button className="btn btn-primary  btn-lg active btnStyle buttonMarginRight"
+					<div>
+					<button className="btn btn-dark button-center"
 						type="submit">
 						Submit Answer
 					</button>
+					</div>
 				</form>
 			</div>
 		);

@@ -16,12 +16,8 @@ view = () =>{
   render() {
     return (
       <div id ="answer-list-main">
-          {this.view() ? (
-            this.props.answers.map(a =>
-              <AnswerComponent answer={a} key={a.answerId}/>
-            )
-          ) : (
-            <h1>No answers found. Be the first to submit one!</h1>
+          {this.view() ? (this.props.answers.map(a =><AnswerComponent answer={a} key={a.answerId}/>) ) 
+                      : (<h1>No answers found. Be the first to submit one!</h1>
           )}
   
   
