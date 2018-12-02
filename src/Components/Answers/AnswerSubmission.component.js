@@ -1,6 +1,5 @@
 import React from 'react';
 import TextField from "@material-ui/core/TextField";
-import { AnswersClient } from '../../AxiosClients/qqBountyClient';
 import axios from 'axios';
 const REACT_APP_SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
 //import * as clickerActions from '../../Redux/Actions/Clicker.actions';

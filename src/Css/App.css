@@ -379,6 +379,7 @@ body {
 
 }
 
+
 .colorRed{
   color: Red;
 }
@@ -448,6 +449,9 @@ body {
 
 .fontSize20{
   font-size: 20px !important;
+}
+.fontSize30{
+  font-size: 30px !important;
 }
 .button-flex-end{
   margin-left: auto;

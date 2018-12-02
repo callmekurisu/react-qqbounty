@@ -2,7 +2,6 @@ import React from 'react';
 
 import AnswerListComponent from '../Answers/AnswerList.component';
 import AnswerSubmissionComponent from '../Answers/AnswerSubmission.component';
-import {BountiesClient} from '../../AxiosClients/qqBountyClient';
 import {Button } from 'reactstrap';
 import axios from 'axios';
 const REACT_APP_SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
