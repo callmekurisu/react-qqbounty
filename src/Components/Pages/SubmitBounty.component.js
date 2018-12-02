@@ -125,6 +125,7 @@ export class SubmitBounty extends React.Component {
 								value={this.state.description}
 								onChange={this.handleChange('description')}
 								margin="normal"
+								variant="outlined"
 							/>
 						</div>
 						<div id="bounty-select-subjects">

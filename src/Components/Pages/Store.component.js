@@ -32,9 +32,12 @@ export class Store extends React.Component {
 		return (
 			<>
         <div id="store-wrapper">
-					<h1 id="store-header">
-						It ain't Falco
-					</h1>
+					<div id="store-header">
+						<h1>
+							Grand Opening Bundles!
+						</h1>
+						<div id="store-header-underline"></div>
+					</div>
 					<div id="store-shelf">
 						{renderProducts}
 					</div>

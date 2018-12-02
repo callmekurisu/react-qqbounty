@@ -18,6 +18,7 @@ export class Product extends React.Component {
 		return (
 			<>
         <Paper className="product-container" 
+          onClick={() => this.props.selectProduct(this.props.product.id)}
           elevation={2} >
           <div className="product-content-wrapper">
             <h1 className="product-name">{this.props.product.productName}</h1>
@@ -29,10 +30,9 @@ export class Product extends React.Component {
             ref={this.radioRef}
             className="product-radio-btn"
             checked={this.props.selectedId === this.props.product.id}
-            onChange={() => this.props.selectProduct(this.props.product.id)}
             onClick={() => this.props.selectProduct(this.props.product.id)}
             value={this.props.product.id}
-            color="orange"
+            color="secondary"
             name="radio-button-demo"
             aria-label="E"
             icon={<RadioButtonUncheckedIcon fontSize="small" />}

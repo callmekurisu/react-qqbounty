@@ -2,16 +2,88 @@ import { bountyTypes } from "../../Redux/Actions/Bounty.actions";
 
 const initialState = {
   newBounties:  {bounty_list:{
-    content: []
+    content: [{
+      "title": "title",
+      "bountyId": 12,
+      "description": "test bounties",
+      "submitted": 1542693600000,
+      "amount": 42,
+      "votes": 0,
+      "timer": 7000000,
+      "statusId": 1,
+      "correctAnswerId": null,
+      "picture": "",
+      "userId": 1,
+      "subject": [
+          {
+              "subjectId": 1,
+              "subject": "Math"
+          }
+      ]
+  }]
   }},
   oldBounties:  {bounty_list:{
-    content: []
+    content: [{
+      "title": "title",
+      "bountyId": 12,
+      "description": "test bounties",
+      "submitted": 1542693600000,
+      "amount": 42,
+      "votes": 0,
+      "timer": 7000000,
+      "statusId": 1,
+      "correctAnswerId": null,
+      "picture": "",
+      "userId": 1,
+      "subject": [
+          {
+              "subjectId": 1,
+              "subject": "Math"
+          }
+      ]
+  }]
   }},  
   popularBounties:  {bounty_list:{
-    content: []
+    content: [{
+      "title": "title",
+      "bountyId": 12,
+      "description": "test bounties",
+      "submitted": 1542693600000,
+      "amount": 42,
+      "votes": 0,
+      "timer": 7000000,
+      "statusId": 1,
+      "correctAnswerId": null,
+      "picture": "",
+      "userId": 1,
+      "subject": [
+          {
+              "subjectId": 1,
+              "subject": "Math"
+          }
+      ]
+  }]
   }},
 	highPayBounties: {bounty_list:{
-    content: []
+    content: [{
+      "title": "title",
+      "bountyId": 12,
+      "description": "test bounties",
+      "submitted": 1542693600000,
+      "amount": 42,
+      "votes": 0,
+      "timer": 7000000,
+      "statusId": 1,
+      "correctAnswerId": null,
+      "picture": "",
+      "userId": 1,
+      "subject": [
+          {
+              "subjectId": 1,
+              "subject": "Math"
+          }
+      ]
+  }]
   }},
 	searchBounties: {bounty_list:{
     content: []
