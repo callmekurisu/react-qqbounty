@@ -1,287 +1,21 @@
 import { bountyTypes } from "../../Redux/Actions/Bounty.actions";
 
 const initialState = {
-	newBounties:  {"bounty_list": {
-		"content": [
-			{
-				"bountyId": 6,
-				"description": "bounty 4",
-				"submitted": 1543718688290,
-				"amount": 100,
-				"votes": 2,
-				"expiration": 1543718688290,
-				"statusId": 3,
-				"correctAnswerId": null,
-				"picture": "",
-				"userId": 3,
-				"username": "username2",
-				"subject": []
-		},
-		{
-				"bountyId": 5,
-				"description": "bounty 4",
-				"submitted": 1543717549970,
-				"amount": 100,
-				"votes": 2,
-				"expiration": 1543717549970,
-				"statusId": 2,
-				"correctAnswerId": null,
-				"picture": "",
-				"userId": 3,
-				"username": "username2",
-				"subject": []
-		},
-		{
-				"bountyId": 4,
-				"description": "bounty 4",
-				"submitted": 1543717457216,
-				"amount": 100,
-				"votes": 2,
-				"expiration": 1543717457216,
-				"statusId": 1,
-				"correctAnswerId": null,
-				"picture": "",
-				"userId": 3,
-				"username": "username2",
-				"subject": []
-		},
-,
-		{
-				"bountyId": 1,
-				"description": "This is my first bounty ever!!!!!!!!!!!!!",
-				"submitted": 1543695239575,
-				"amount": 50,
-				"votes": 0,
-				"expiration": 1543698839575,
-				"statusId": 1,
-				"correctAnswerId": null,
-				"picture": "Hi",
-				"userId": 4,
-				"username": "username3",
-				"subject": [
-						{
-								"subjectId": 1,
-								"subject": "Math"
-						}
-				]
-		}
-		],
-		"pageable": {
-				"sort": {
-						"sorted": false,
-						"unsorted": true,
-						"empty": true
-				},
-				"offset": 0,
-				"pageNumber": 0,
-				"pageSize": 20,
-				"paged": true,
-				"unpaged": false
-		},
-		"last": true,
-		"totalPages": 1,
-		"totalElements": 6,
-		"size": 20,
-		"number": 0,
-		"sort": {
-				"sorted": false,
-				"unsorted": true,
-				"empty": true
-		},
-		"numberOfElements": 6,
-		"first": true,
-		"empty": false
-}},
-	oldBounties: {"bounty_list": {
-		"content": [
-			{
-				"bountyId": 6,
-				"description": "bounty 4",
-				"submitted": 1543718688290,
-				"amount": 100,
-				"votes": 2,
-				"expiration": 1543718688290,
-				"statusId": 3,
-				"correctAnswerId": null,
-				"picture": "",
-				"userId": 3,
-				"username": "username2",
-				"subject": []
-		},
-		{
-				"bountyId": 5,
-				"description": "bounty 4",
-				"submitted": 1543717549970,
-				"amount": 100,
-				"votes": 2,
-				"expiration": 1543717549970,
-				"statusId": 2,
-				"correctAnswerId": null,
-				"picture": "",
-				"userId": 3,
-				"username": "username2",
-				"subject": []
-		},
-		{
-				"bountyId": 4,
-				"description": "bounty 4",
-				"submitted": 1543717457216,
-				"amount": 100,
-				"votes": 2,
-				"expiration": 1543717457216,
-				"statusId": 1,
-				"correctAnswerId": null,
-				"picture": "",
-				"userId": 3,
-				"username": "username2",
-				"subject": []
-		},
-,
-		{
-				"bountyId": 1,
-				"description": "This is my first bounty ever!!!!!!!!!!!!!",
-				"submitted": 1543695239575,
-				"amount": 50,
-				"votes": 0,
-				"expiration": 1543698839575,
-				"statusId": 1,
-				"correctAnswerId": null,
-				"picture": "Hi",
-				"userId": 4,
-				"username": "username3",
-				"subject": [
-						{
-								"subjectId": 1,
-								"subject": "Math"
-						}
-				]
-		}
-		],
-		"pageable": {
-				"sort": {
-						"sorted": false,
-						"unsorted": true,
-						"empty": true
-				},
-				"offset": 0,
-				"pageNumber": 0,
-				"pageSize": 20,
-				"paged": true,
-				"unpaged": false
-		},
-		"last": true,
-		"totalPages": 1,
-		"totalElements": 6,
-		"size": 20,
-		"number": 0,
-		"sort": {
-				"sorted": false,
-				"unsorted": true,
-				"empty": true
-		},
-		"numberOfElements": 6,
-		"first": true,
-		"empty": false
-}},
-	popularBounties:  {"bounty_list": {
-		"content": [
-			{
-				"bountyId": 1,
-				"description": "bounty 1",
-				"submitted": 1543718688290,
-				"amount": 100,
-				"votes": 2,
-				"expiration": 1543718688290,
-				"statusId": 3,
-				"correctAnswerId": null,
-				"picture": "",
-				"userId": 3,
-				"username": "username2",
-				"subject": []
-		},
-		{
-				"bountyId": 2,
-				"description": "bounty 2",
-				"submitted": 1543717549970,
-				"amount": 100,
-				"votes": 2,
-				"expiration": 1543717549970,
-				"statusId": 2,
-				"correctAnswerId": null,
-				"picture": "",
-				"userId": 3,
-				"username": "username2",
-				"subject": []
-		},
-		{
-				"bountyId": 3,
-				"description": "bounty 3",
-				"submitted": 1543717457216,
-				"amount": 100,
-				"votes": 2,
-				"expiration": 1543717457216,
-				"statusId": 1,
-				"correctAnswerId": null,
-				"picture": "",
-				"userId": 3,
-				"username": "username2",
-				"subject": []
-		},
-		{
-				"bountyId": 4,
-				"description": "This is my first bounty ever!!!!!!!!!!!!!",
-				"submitted": 1543695239575,
-				"amount": 50,
-				"votes": 0,
-				"expiration": 1543698839575,
-				"statusId": 1,
-				"correctAnswerId": null,
-				"picture": "Hi",
-				"userId": 4,
-				"username": "username3",
-				"subject": [
-						{
-								"subjectId": 1,
-								"subject": "Math"
-						}
-				]
-		}
-		],
-		"pageable": {
-				"sort": {
-						"sorted": false,
-						"unsorted": true,
-						"empty": true
-				},
-				"offset": 0,
-				"pageNumber": 0,
-				"pageSize": 20,
-				"paged": true,
-				"unpaged": false
-		},
-		"last": true,
-		"totalPages": 1,
-		"totalElements": 6,
-		"size": 20,
-		"number": 0,
-		"sort": {
-				"sorted": false,
-				"unsorted": true,
-				"empty": true
-		},
-		"numberOfElements": 6,
-		"first": true,
-		"empty": false
-}},
-	highPayBounties: {"bounty_list": {
-		"content": []
-	}},
-	searchBounties: {"bounty_list": {
-		"content": []
-	}},
-	userBounties: {"bounty_list": {
-		"content": []
-	}},
+  newBounties:  {bounty_list:{
+    content: []
+  }},
+  oldBounties:  {bounty_list:{
+    content: []
+  }},  
+  popularBounties:  {bounty_list:{
+    content: []
+  }},
+	highPayBounties: {bounty_list:{
+    content: []
+  }},
+	searchBounties: {bounty_list:{
+    content: []
+  }},
   modalOpen: false,
   modalBountyId: null,
   modalBounty: null
@@ -292,12 +26,12 @@ export const bountyReducer = (state = initialState, action) => {
 		case bountyTypes.GET_NEW_BOUNTIES:
       return {
         ...state,
-        highPayBounties: action.payload.newBounties
+        newBounties: action.payload.newBounties
 		}
 		case bountyTypes.GET_OLD_BOUNTIES:
       return {
         ...state,
-        highPayBounties: action.payload.oldBounties
+        oldBounties: action.payload.oldBounties
 		}
 		case bountyTypes.GET_POPULAR_BOUNTIES:
       return {

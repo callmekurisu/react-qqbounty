@@ -2,9 +2,13 @@ import { BountiesClient } from '../../AxiosClients/qqBountyClient';
 import axios from 'axios';
 import { userTypes }      from './User.actions';
 import { snackbarTypes }  from './Snackbar.actions';
+<<<<<<< HEAD
 const SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
 let jwtToken = localStorage.getItem('JWT');
 
+=======
+import axios from 'axios';
+>>>>>>> b8a8b3b6860c837d267c02d30bd0d615571065e2
 export const bountyTypes = {
   GET_SEARCH_BOUNTIES:      'GET_SEARCH_BOUNTIES',
   GET_NEW_BOUNTIES:         'GET_NEW_BOUNTIES',
@@ -16,56 +20,70 @@ export const bountyTypes = {
   OPEN_BOUNTY_MODAL:  'OPEN_BOUNTY_MODAL',
   CLOSE_BOUNTY_MODAL: 'CLOSE_BOUNTY_MODAL'
 }
+const SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
 
 
 export const getNewBounties = () => (dispatch) => {
-  BountiesClient.get('/newest')
-  .then((response) => {
+  axios.get(SERVER_ADDRESS+'/bounties/newest')
+  .then(response => {
     dispatch({
       type: bountyTypes.GET_NEW_BOUNTIES,
-        payload: {
-          newBounties: response.data.result
-        }
-    })
+      payload: {
+        newBounties: response.data.result
+      }
+    });
   })
+  .catch(error => {
+    console.log("No bueno =(")
+  });
 }
 
 export const getOldBounties = () => (dispatch) => {
-  BountiesClient.get('/oldest')
-  .then((response) => {
+  axios.get(SERVER_ADDRESS+'/bounties/oldest')
+  .then(response => {
     dispatch({
       type: bountyTypes.GET_OLD_BOUNTIES,
-        payload: {
-          oldBounties: response.data.result
-        }
-    })
+      payload: {
+        oldBounties: response.data.result
+      }
+    });
   })
+  .catch(error => {
+    console.log("No bueno =(")
+  });
 }
 
 export const getPopularBounties = () => (dispatch) => {
-  BountiesClient.get('/popular')
-  .then((response) => {
+  axios.get(SERVER_ADDRESS+'/bounties/popular')
+  .then(response => {
     dispatch({
       type: bountyTypes.GET_POPULAR_BOUNTIES,
-        payload: {
-          popularBounties: response.data.result
-        }
-    })
+      payload: {
+        popularBounties: response.data.result
+      }
+    });
   })
+  .catch(error => {
+    console.log("No bueno =(")
+  });
 }
 
 export const getHighPayBounties = () => (dispatch) => {
-  BountiesClient.get('/cost')
-  .then((response) => {
+  axios.get(SERVER_ADDRESS+'/bounties/cost')
+  .then(response => {
     dispatch({
       type: bountyTypes.GET_HIGH_PAY_BOUNTIES,
-        payload: {
-          highPayBounties: response.data.result
-        }
-    })
+      payload: {
+        highPayBounties: response.data.result
+      }
+    });
   })
+  .catch(error => {
+    console.log("No bueno =(")
+  });
 }
 
+<<<<<<< HEAD
 export const getUserBounties = () => (dispatch) => {
   axios.get(`${SERVER_ADDRESS}/bounties/user`,
    { headers: {
@@ -102,14 +120,56 @@ export const submitBounty = (state) => (dispatch) => {
     payload: {
       message: "Bounty Submitted"
     }
-  });
+=======
+export const getBountyBySubjects = (pSubjects) => (dispatch) => {
+  // ["Math","PADFAdsf"]
+  let paramString = "";
+  if(pSubjects.length !== 0) {
+      paramString = "?"
+      pSubjects.map((subject)=>{
+          paramString = "subjects="+subject+"&"
+      })
 
-  dispatch({
-    type: userTypes.USER_BALANCE_CHANGE,
-    payload: {
-      message: "Bounty Submitted"
-    }
+      paramString = paramString.substring(0,paramString.length-1);
+  }
+  axios.get(SERVER_ADDRESS+`/bounties/subjects${paramString}`)
+  .then(response => {
+    dispatch({
+      type: bountyTypes.GET_HIGH_PAY_BOUNTIES,
+      payload: {
+        highPayBounties: response.data.result
+      }
+    });
+  })
+  .catch(error => {
+    console.log("No bueno =(")
+>>>>>>> b8a8b3b6860c837d267c02d30bd0d615571065e2
   });
+}
+
+export const submitBounty = (state) => (dispatch) => {
+  console.log(state)
+  let jwtToken = localStorage.getItem("JWT");
+  axios.defaults.headers.common['Authorization'] = 'Bearer ' + jwtToken;
+    axios.post(SERVER_ADDRESS+'/bounties',state)
+    .then(response => {
+      dispatch({
+        type: userTypes.SET_USER_INFO,
+        payload: {
+          user: response.data.result.user
+        }
+      });
+      dispatch({
+        type: snackbarTypes.SNACKBAR_ADD,
+        payload: {
+          message: "Bounty Submitted"
+        }
+      });
+    })
+    .catch(error => {
+      
+    });
+
 }
 
 export const openBountyModal = (pBounty) => (dispatch) => {

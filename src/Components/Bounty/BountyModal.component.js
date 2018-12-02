@@ -41,11 +41,12 @@ class BountyModal extends React.Component {
           aria-describedby="alert-dialog-slide-description"
           fullWidth
           maxWidth="lg"
+          className ="Dialog-main"
         >
-          <DialogTitle id="alert-dialog-slide-title">
-            {"Bounty Id:"}
+
+          <DialogTitle id="alert-dialog-slide-title"  className = 'dialouge-title'>
           </DialogTitle>
-          <DialogContent>
+          <DialogContent  className = 'dialouge-body'>
             <div id="bounty-modal-content-container">
               {renderDialogContent}
             </div>

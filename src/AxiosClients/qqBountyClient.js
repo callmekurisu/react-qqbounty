@@ -1,7 +1,5 @@
 import axios from 'axios';
 import { environment } from './Environment';
-import {jwtToken} from '../Redux/Actions/User.actions';
-
 export const BountiesClient = axios.create({
   baseURL: environment.qqBountyContext+"bounties",
   headers: {
@@ -12,8 +10,7 @@ export const BountiesClient = axios.create({
 
 export const AnswersClient = axios.create({
   baseURL: environment.qqBountyContext + "answers",
-  headers: {
-    'Authorization': jwtToken,
+  headers: { 
     'Content-Type': 'application/json'
   }
 });

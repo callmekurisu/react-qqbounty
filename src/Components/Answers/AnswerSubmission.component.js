@@ -1,14 +1,19 @@
 import React from 'react';
 import TextField from "@material-ui/core/TextField";
 import { AnswersClient } from '../../AxiosClients/qqBountyClient';
+import axios from 'axios';
+const REACT_APP_SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
+let jwtToken = localStorage.getItem('JWT');
 //import * as clickerActions from '../../Redux/Actions/Clicker.actions';
+
 
 class AnswerSubmissionComponent extends React.Component {
 	constructor(props) {
 		super(props);
+		console.log(props);
 		this.state = {
 			description: '',
-			bountyId: 1
+			bountyId: this.props.bounty.bountyId
 		}
 	}
 
@@ -19,9 +24,11 @@ class AnswerSubmissionComponent extends React.Component {
 			"bountyId": this.state.bountyId
 		}
 		
-		AnswersClient.post("",answerObject)
+		axios.post(	`${REACT_APP_SERVER_ADDRESS}/answers`,answerObject,{headers: {
+			'Authorization': `Bearer ${jwtToken}`
+		  }})
 		.then(res => {
-			this.props.updateAnswers(res.data.result.answer);
+			this.props.updateAnswers(res.data.result.answers);
 		})
 		.catch(err => {
 			console.log(err);
@@ -35,8 +42,11 @@ class AnswerSubmissionComponent extends React.Component {
 		})
 	}
 
+
+	
 	render() {
 		return (
+			
 			<div id="answer-submission-main">
 				<form onSubmit={this.submit}>
 					<TextField
@@ -49,12 +59,14 @@ class AnswerSubmissionComponent extends React.Component {
 						fullWidth
 						value={this.state.description}
 						onChange={this.descriptionChange}
+						color="black"
 					/>
-
-					<button className="btn btn-primary  btn-lg active btnStyle buttonMarginRight"
+					<div>
+					<button className="btn btn-dark button-center"
 						type="submit">
 						Submit Answer
 					</button>
+					</div>
 				</form>
 			</div>
 		);
