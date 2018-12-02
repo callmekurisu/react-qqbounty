@@ -4,7 +4,9 @@ import WelcomeBanner from './Commons/WelcomeBanner.component';
 import Home from './Pages/Home.component';
 import Store from './Pages/Store.component';
 import Dashboard from './Pages/Dashboard.component';
-import UserProfile from './Pages/UserProfile.component';
+
+import UserProfile from './Pages/UserProfile/UserProfile.component';
+
 import SubmitBounty from './Pages/SubmitBounty.component';
 import AdvertisementText from './Commons/AdvertisementText.component';
 
@@ -17,7 +19,7 @@ import * as bountyActions from '../Redux/Actions/Bounty.actions';
 export class MainContent extends React.Component {
 
 	componentDidMount() {
-		// this.props.setUpStore();
+	
 		this.props.getHighPay();
 		this.props.getNew();
 		this.props.getPopular();
@@ -29,6 +31,7 @@ export class MainContent extends React.Component {
 			return 	<Home />
 		}
 		else if(this.props.page === 'store') {
+			this.props.setUpStore()
 			return 	<Store />			
 		}
 		else if(this.props.page === 'user_profile') {

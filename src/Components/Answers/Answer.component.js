@@ -23,10 +23,8 @@ class AnswerComponent extends React.Component {
 
 
 	vote = (voteValue) => {
-		let jwtToken = localStorage.getItem('JWT');
-		console.log(jwtToken);
 		axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('JWT');
-		axios.patch(`${REACT_APP_SERVER_ADDRESS}answers/${this.props.answer.answerId}?voteValue=${voteValue}`,
+		axios.patch(`${REACT_APP_SERVER_ADDRESS}answers/${this.props.answer.answerId}/vote?voteValue=${voteValue}`,
 			).then(() => {
 				this.setState({
 					...this.state,
@@ -49,34 +47,27 @@ class AnswerComponent extends React.Component {
 							title="Answer Picture"
 						/> */}
 					<CardContent className='answer-card-header'>
-						Submitted by:{this.props.answer.username}
+						Submitted by: {this.props.answer.username}
 					</CardContent>
 						<CardContent  className='answer-card-body'>
-							Description:{this.props.answer.description}
-
-
+							{this.props.answer.description}
 						</CardContent>
 			
 
 					<div className='answer-card-footer'>
 						<div className='answer-card-flex-start'>
-							<CardActionArea>
-								<Button className ="answer-button" size="small" color="black" onClick={() => this.vote(1)}>
+								<Button className ="answer-button" size="small" color="default" onClick={() => this.vote(1)}>
 									<MdThumbUp className='.material-icons.md-36' />
 								</Button>
-							</CardActionArea>
-							<CardActionArea>
-								<Button className ="answer-button" size="small" color="black" onClick={() => this.vote(-1)}>
+								<Button className ="answer-button" size="small" color="default" onClick={() => this.vote(-1)}>
 									<MdThumbDown className='.material-icons.md-36' />
 								</Button>
-							</CardActionArea>
-							<div className="margin-auto">
-								Vote:{this.state.votes}
-							</div>
-
+						</div>
+						<div className='margin-auto-rating answer-card-flex-start'>
+								{`Rating: ${this.state.votes}`}
 						</div>
 						<div className='answer-card-flex-end margin-auto'>
-							Submitted:{time(this.props.answer.submitted)}<br />
+							Submitted: {time(this.props.answer.submitted)}
 
 						</div>
 					</div>

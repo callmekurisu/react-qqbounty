@@ -66,7 +66,7 @@ class BountyAnswersComponent extends React.Component {
 			<div id="bounty-answers-main">
 				{view}
 				<div className='button-flex-end'>
-				<Button  className='answer-submit-button' color='primary' onClick={this.handleSubmitAnswerClick}> {this.state.submittingAnswer ? 'Write an Answer' : 'Back'}</Button >
+				<Button  className='answer-submit-button' color='dark' onClick={this.handleSubmitAnswerClick}> {this.state.submittingAnswer ? 'Write an Answer' : 'Back'}</Button >
 				</div>
 			</div>
 		);

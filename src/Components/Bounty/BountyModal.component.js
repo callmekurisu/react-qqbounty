@@ -43,8 +43,8 @@ class BountyModal extends React.Component {
           maxWidth="lg"
           className ="Dialog-main"
         >
-
-          <DialogTitle id="alert-dialog-slide-title"  className = 'dialouge-title'>
+          
+          <DialogTitle id="alert-dialog-slide-title"  className = 'dialouge-title'>{" "}
           </DialogTitle>
           <DialogContent  className = 'dialouge-body'>
             <div id="bounty-modal-content-container">

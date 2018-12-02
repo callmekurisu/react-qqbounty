@@ -2,6 +2,7 @@ import axios from 'axios';
 import { snackbarTypes } from './Snackbar.actions';
 
 const SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
+let jwtToken = localStorage.getItem('JWT');
 
 export const storeTypes = {
   STORE_SET_PRODUCTS: 'STORE_SET_PRODUCTS',
@@ -45,12 +46,15 @@ export const purchase = (pProductId) => (dispatch) => {
 }
 
 export const setUp = () => (dispatch) => {
-  axios.get(SERVER_ADDRESS+'/products')
+  axios.get(`${SERVER_ADDRESS}/products`,
+  {headers: {
+    'Authorization': `Bearer ${jwtToken}`
+  }})
   .then(response => {
     dispatch({
       type: storeTypes.STORE_SET_PRODUCTS,
       payload: {
-        products: response.data.result
+        products: response.data.result.product_list
       }
     });
   })

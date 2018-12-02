@@ -1,18 +1,24 @@
 import { BountiesClient } from '../../AxiosClients/qqBountyClient';
+import axios from 'axios';
 import { userTypes }      from './User.actions';
 import { snackbarTypes }  from './Snackbar.actions';
-import axios from 'axios';
+
+let jwtToken = localStorage.getItem('JWT');
+const SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
+
 export const bountyTypes = {
   GET_SEARCH_BOUNTIES:      'GET_SEARCH_BOUNTIES',
   GET_NEW_BOUNTIES:         'GET_NEW_BOUNTIES',
   GET_OLD_BOUNTIES:         'GET_OLD_BOUNTIES',
   GET_POPULAR_BOUNTIES:     'GET_POPULAR_BOUNTIES',
   GET_HIGH_PAY_BOUNTIES:    'GET_HIGH_PAY_BOUNTIES',
+  GET_USER_BOUNTIES:        'GET_USER_BOUNTIES',
   POST_BOUNTY:        'POST_BOUNTY',
   OPEN_BOUNTY_MODAL:  'OPEN_BOUNTY_MODAL',
   CLOSE_BOUNTY_MODAL: 'CLOSE_BOUNTY_MODAL'
 }
-const SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
+
+
 
 export const getNewBounties = () => (dispatch) => {
   axios.get(SERVER_ADDRESS+'/bounties/newest')
@@ -74,30 +80,22 @@ export const getHighPayBounties = () => (dispatch) => {
   });
 }
 
-export const getBountyBySubjects = (pSubjects) => (dispatch) => {
-  // ["Math","PADFAdsf"]
-  let paramString = "";
-  if(pSubjects.length !== 0) {
-      paramString = "?"
-      pSubjects.map((subject)=>{
-          paramString = "subjects="+subject+"&"
-      })
-
-      paramString = paramString.substring(0,paramString.length-1);
-  }
-  axios.get(SERVER_ADDRESS+`/bounties/subjects${paramString}`)
-  .then(response => {
-    dispatch({
-      type: bountyTypes.GET_HIGH_PAY_BOUNTIES,
-      payload: {
-        highPayBounties: response.data.result
-      }
-    });
+export const getUserBounties = () => (dispatch) => {
+  axios.get(`${SERVER_ADDRESS}/bounties/user`,
+   { headers: {
+      'Authorization': `Bearer ${jwtToken}`
+    }
   })
-  .catch(error => {
-    console.log("No bueno =(")
-  });
+  .then((response) => { 
+    dispatch({
+      type: bountyTypes.GET_USER_BOUNTIES,
+        payload: {
+          userBounties: response.data.result
+        }
+    })
+  })
 }
+
 
 export const submitBounty = (state) => (dispatch) => {
   console.log(state)
