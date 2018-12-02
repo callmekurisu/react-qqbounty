@@ -115,6 +115,7 @@ export class NavBar extends React.Component {
                 onClose={this.handleClose}
               >
                 <MenuItem onClick={() => this.props.changePage('user_profile')}>Profile</MenuItem>
+                <MenuItem onClick={() => this.props.changePage('submit_bounty')}>Post Bounty</MenuItem>                
                 <MenuItem onClick={this.handleLogout}>Logout</MenuItem>
               </Menu>
             </div>;

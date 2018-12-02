@@ -2,13 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import BountyWindow from './BountyWindow.component';
 
-export class ExpireSoonBountyWindow extends React.Component {
+export class OldBountyWindow extends React.Component {
   
 	render() {
 		return (
       <>
-        <div id="expire-soon-bounty-window-wrapper" className="bounty-window-wrapper">
-          <h1 id="expire-soon-bounty-window-title">Expire Soon</h1>
+        <div id="old-bounty-window-wrapper" className="bounty-window-wrapper">
+          <h1 className="bounty-window-title">Expire Soon</h1>
           <BountyWindow bounties={this.props.bounties} />
         </div>
       </>
@@ -18,11 +18,11 @@ export class ExpireSoonBountyWindow extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    bounties: state.bounty.bounties
+    bounties: state.bounty.oldBounties.bounty_list.content
   }
 }
 
 const mapDispatchToProps = {
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ExpireSoonBountyWindow)
+export default connect(mapStateToProps, mapDispatchToProps)(OldBountyWindow)

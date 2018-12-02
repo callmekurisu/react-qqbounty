@@ -18,10 +18,10 @@ export class Product extends React.Component {
         <Paper className="product-container" 
           elevation={2} >
           <div className="product-content-wrapper">
-            <h1 className="product-name">{this.props.product.product_name}</h1>
-            <img src="" className="prodtc-image"/>
-            <h5 className="product-cost">{this.props.product.product_cost}</h5>
-            <h5 className="product-credit">{this.props.product.product_credit}</h5>
+            <h1 className="product-name">{this.props.product.productName}</h1>
+            <img src="" className="product-image"/>
+            <h5 className="product-cost">{this.props.product.productCost}</h5>
+            <h5 className="product-credit">{this.props.product.productCredit}</h5>
           </div>
           <Radio
             ref={this.radioRef}

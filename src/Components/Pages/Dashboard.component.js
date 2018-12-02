@@ -9,7 +9,7 @@ import BountyCard from '../Bounty/BountyWindows/BountyCard.component';
 export class Dashboard extends React.Component {
 
 	renderBountyCarousel = (pBounties) => {
-    if(pBounties !== null) {
+    if(pBounties.length !== 0) {
       return  pBounties.map(bounty => {
                 return <BountyCard key={bounty.bountyId} bounty={bounty} />
               })
@@ -21,7 +21,6 @@ export class Dashboard extends React.Component {
   render() {
     let carouselSlides = this.renderBountyCarousel(this.props.bounties);
 		let tRows = Math.ceil(this.props.bounties.length / 5);
-		console.log(tRows);
 		let settings = {
 			className: "center",
 			centerMode: true,
@@ -46,7 +45,7 @@ export class Dashboard extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    bounties: state.bounty.bounties
+    bounties: state.bounty.searchBounties.bounty_list.content
   }
 }
 
