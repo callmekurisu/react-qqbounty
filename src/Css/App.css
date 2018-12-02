@@ -266,12 +266,19 @@ User Profile
 .container{
   padding:5%;
 }
-.container .profile-img{
+.container .img{
   text-align:center;
 }
 .container .profile-details{
   border-left:3px solid #ded4da;
 }
+
+.profile-image {
+  display: flex;
+  justify-content: flex-start;
+  width: 25% !important;
+}
+
 
 /*******************************
       footer

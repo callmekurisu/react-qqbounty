@@ -1,32 +1,25 @@
 import { BountiesClient } from '../../AxiosClients/qqBountyClient';
-<<<<<<< HEAD
-let jwt = localStorage.getItem('jwt');
-console.log(`jwt: ${jwt}`);
-=======
+import axios from 'axios';
 import { userTypes }      from './User.actions';
 import { snackbarTypes }  from './Snackbar.actions';
+const SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
+let jwtToken = localStorage.getItem('JWT');
 
->>>>>>> 9c44f7ef7b2fd6cd6e28cf8f70fca904e61fbb3f
 export const bountyTypes = {
   GET_SEARCH_BOUNTIES:      'GET_SEARCH_BOUNTIES',
   GET_NEW_BOUNTIES:         'GET_NEW_BOUNTIES',
   GET_OLD_BOUNTIES:         'GET_OLD_BOUNTIES',
   GET_POPULAR_BOUNTIES:     'GET_POPULAR_BOUNTIES',
   GET_HIGH_PAY_BOUNTIES:    'GET_HIGH_PAY_BOUNTIES',
+  GET_USER_BOUNTIES:        'GET_USER_BOUNTIES',
   POST_BOUNTY:        'POST_BOUNTY',
   OPEN_BOUNTY_MODAL:  'OPEN_BOUNTY_MODAL',
   CLOSE_BOUNTY_MODAL: 'CLOSE_BOUNTY_MODAL'
 }
 
-<<<<<<< HEAD
 
-export const getInitBounties = () => (dispatch) => {
- ;
-  BountiesClient.get()
-=======
 export const getNewBounties = () => (dispatch) => {
   BountiesClient.get('/newest')
->>>>>>> 9c44f7ef7b2fd6cd6e28cf8f70fca904e61fbb3f
   .then((response) => {
     dispatch({
       type: bountyTypes.GET_NEW_BOUNTIES,
@@ -73,6 +66,23 @@ export const getHighPayBounties = () => (dispatch) => {
   })
 }
 
+export const getUserBounties = () => (dispatch) => {
+  axios.get(`${SERVER_ADDRESS}/bounties/user`,
+   { headers: {
+      'Authorization': `Bearer ${jwtToken}`
+    }
+  })
+  .then((response) => { 
+    dispatch({
+      type: bountyTypes.GET_USER_BOUNTIES,
+        payload: {
+          userBounties: response.data.result
+        }
+    })
+  })
+}
+
+
 export const submitBounty = (state) => (dispatch) => {
   console.log(state)
   // BountiesClient.post()
@@ -84,6 +94,8 @@ export const submitBounty = (state) => (dispatch) => {
   //       }
   //   })
   // })
+
+  
 
   dispatch({
     type: snackbarTypes.SNACKBAR_ADD,

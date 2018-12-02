@@ -6,29 +6,19 @@ import Product from './Store/Product.component';
 
 import * as storeActions from '../../Redux/Actions/Store.actions';
 
+
 export class Store extends React.Component {
 	state = {
     selectProductId: 0
 	};
-	
-	renderProducts = () => {
-    if(this.props.products.length !== 0) {
-      return this.props.products.map( product => {
-				return <Product key={product.id} 
-												product={product} 
-												selectedId={this.state.selectProductId}
-												selectProduct={this.handleProductSelect} />
-      })
-    } else return null;
-	}
-	
-	handleProductSelect = (pProductId) => {
-    this.setState({ selectProductId: pProductId });
-  };
+
+	handleProductSelect = (pProductId) => (event) =>{
+		console.log(`Selected Id: ${pProductId}, Product Id: ${this.selectedId}`)
+		this.setState({ selectProductId: pProductId });
+	};
 	
   render() {
-    let renderProducts = this.renderProducts();
-
+		
 		return (
 			<>
         <div id="store-wrapper">
@@ -36,7 +26,15 @@ export class Store extends React.Component {
 						It ain't Falco
 					</h1>
 					<div id="store-shelf">
-						{renderProducts}
+					<>
+					{this.props.products.map( product => 
+						<Product key={product.productId} 
+							product={product} 
+							selectedId={this.state.selectProductId}
+							selectProduct={this.handleProductSelect} />
+						)
+					}
+					</>					
 					</div>
 					<div id="store-btn-wrapper">
 						<Button variant="contained" color="primary" id="purchase-btn"
@@ -52,12 +50,12 @@ export class Store extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    products: state.store.products
+		products: state.store.products
   }
 }
 
 const mapDispatchToProps = {
-  purchase: storeActions.purchase
+	purchase: storeActions.purchase
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Store)
