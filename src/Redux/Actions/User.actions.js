@@ -37,12 +37,6 @@ export const setupUser = () => (dispatch) => {
 }
 
 export const login = (pUsername, pPassword) => (dispatch) => {
-  dispatch({
-    type: userTypes.USER_LOGIN,
-    payload: {
-      login: true
-    }
-  });
   axios.post(SERVER_ADDRESS+'/users/login', {
     username: pUsername,
     password: pPassword
