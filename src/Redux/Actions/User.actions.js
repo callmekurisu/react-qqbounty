@@ -132,8 +132,12 @@ export const register = (pUsername, pPassword, pEmail) => (dispatch) => {
         login: false
       }
     });
-    console.log(error);
-
+    dispatch({
+      type: snackbarTypes.SNACKBAR_ADD,
+      payload: {
+        message: "Unable to register"
+      }
+    });
   });
 }
 

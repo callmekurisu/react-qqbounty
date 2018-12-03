@@ -1,8 +1,5 @@
-import { BountiesClient } from '../../AxiosClients/qqBountyClient';
 import axios from 'axios';
-import { userTypes } from './User.actions';
 import { snackbarTypes } from './Snackbar.actions';
-import { SubjectSubscriber } from 'rxjs/internal/Subject';
 
 const SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
 
@@ -104,7 +101,7 @@ export const getSearchBounties = (pSubjects) => (dispatch) => {
   let paramString = "";
   if (pSubjects.length !== 0) {
     paramString = "?"
-    pSubjects.map((subject) => {
+    pSubjects.foreach((subject) => {
       paramString = "subjects=" + subject + "&"
     })
     paramString = paramString.substring(0, paramString.length - 1);

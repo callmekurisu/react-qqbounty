@@ -1,7 +1,6 @@
 import React from 'react';
 
 import WelcomeBanner from '../Commons/WelcomeBanner.component';
-import AdvertisementText from '../Commons/AdvertisementText.component';
 import PopularBountyWindow from '../Bounty/BountyWindows/PopularBountyWindow.component';
 import NewBountyWindow from '../Bounty/BountyWindows/NewBountyWindow.component';
 import OldBountyWindow from '../Bounty/BountyWindows/OldBountyWindow.component';

@@ -1,16 +1,14 @@
 version: 0.1
 environment_variables:
     plaintext:
-        S3_BUCKET: "qqbounty.com"
+        S3_BUCKET: "qqbounty"
 phases:
     install:
         commands:
-            - echo Installing source yarn dependencies...
-            - yarn install
+            - npm install
     build:
         commands:
-            - echo Build started on `date`
-            - yarn build
+            - npm build
     post_build:
         commands:
             - echo "$CODEBUILD_BUILD_SUCCEEDING"
@@ -24,4 +22,4 @@ artifacts:
     files:
         - '**/*'
     base-directory: '/build/*'
-    discard-paths: no
+    discard-paths: yes
