@@ -11,20 +11,32 @@ import * as snackbarActions from '../../Redux/Actions/Snackbar.actions';
 
 const times = [
 	{
-    value: 1,
-    label: '1 Hour',
+    	value: 1,
+    	label: '1 Hour',
 	},
 	{
-    value: 2,
-    label: '2 Hours',
+    	value: 2,
+    	label: '2 Hours',
 	},
 	{
-    value: 3,
-    label: '3 Hours',
+    	value: 3,
+    	label: '3 Hours',
 	},
 	{
-    value: 4,
-    label: '4 Hours',
+    	value: 4,
+    	label: '4 Hours',
+	},
+	{
+		value: 8,
+		label: '8 Hours',
+	},
+	{
+		value: 16,
+		label: '16 Hours',
+	},
+	{
+		value: 24,
+		label: '24 Hours',
 	}
 ];
 

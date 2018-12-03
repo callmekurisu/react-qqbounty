@@ -136,31 +136,31 @@ export const submitBounty = (state) => (dispatch) => {
     axios.post(SERVER_ADDRESS + '/bounties', state)
       .then(response => {
 
-        // setTimeout(()=>{
-        // axios.get(SERVER_ADDRESS + '/bounties/newest')
-        //   .then(response => {
-        //     dispatch({
-        //       type: bountyTypes.GET_NEW_BOUNTIES,
-        //       payload: {
-        //         newBounties: response.data.result
-        //       }
-        //     });
-        //   })
-        //   .catch(error => {
-        //   });
+        setTimeout(()=>{
+        axios.get(SERVER_ADDRESS + '/bounties/newest')
+          .then(response => {
+            dispatch({
+              type: bountyTypes.GET_NEW_BOUNTIES,
+              payload: {
+                newBounties: response.data.result
+              }
+            });
+          })
+          .catch(error => {
+          });
 
-        // axios.get(SERVER_ADDRESS + '/bounties/cost')
-        //   .then(response => {
-        //     dispatch({
-        //       type: bountyTypes.GET_NEW_BOUNTIES,
-        //       payload: {
-        //         newBounties: response.data.result
-        //       }
-        //     });
-        //   })
-        //   .catch(error => {
-        //   });
-        // },2000)
+        axios.get(SERVER_ADDRESS + '/bounties/cost')
+          .then(response => {
+            dispatch({
+              type: bountyTypes.GET_NEW_BOUNTIES,
+              payload: {
+                newBounties: response.data.result
+              }
+            });
+          })
+          .catch(error => {
+          });
+        },2000)
         dispatch({
           type: snackbarTypes.SNACKBAR_ADD,
           payload: {
