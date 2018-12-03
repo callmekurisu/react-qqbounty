@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { snackbarTypes } from './Snackbar.actions';
+import { userTypes } from './User.actions';
+
 
 const SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
 let jwtToken = localStorage.getItem('JWT');
@@ -20,11 +22,19 @@ export const purchase = (pProductId) => (dispatch) => {
           message: "Order processed! Thank you."
         }
       });
-      dispatch({
-        type: snackbarTypes.SNACKBAR_ADD,
-        payload: {
-          message: "Order processed! Thank you."
-        }
+      axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('JWT');
+      axios.get(SERVER_ADDRESS+'/users/info')
+      .then(response => {
+        console.log(response.data)
+        dispatch({
+          type: userTypes.SET_USER_INFO,
+          payload: {
+            user: response.data.result.user
+          }
+        });
+      })
+      .catch(error => {
+        
       });
     })
     .catch(error => {

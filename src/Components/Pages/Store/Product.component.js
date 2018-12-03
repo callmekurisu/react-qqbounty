@@ -21,13 +21,13 @@ export class Product extends React.Component {
   }
 
   render() {
-    let sProductImage = productImageList[this.props.product.id - 1];
-    let sProductStyle = productImageStyle[this.props.product.id - 1];
-
+    let sProductImage = productImageList[this.props.product.productId - 1];
+    let sProductStyle = productImageStyle[this.props.product.productId - 1];
+    
 		return (
 			<>
         <Paper className="product-container" 
-          onClick={() => this.props.selectProduct(this.props.product.id, this.props.product.productCost)}
+          onClick={() => this.props.selectProduct(this.props.product.productId, this.props.product.productCost)}
           elevation={2} >
           <div className="product-content-wrapper">
             <div className="flex-column product-name-wrapper">
@@ -49,9 +49,9 @@ export class Product extends React.Component {
           <Radio
             ref={this.radioRef}
             className="product-radio-btn"
-            checked={this.props.selectedId === this.props.product.id}
-            onClick={() => this.props.selectProduct(this.props.product.id)}
-            value={this.props.product.id}
+            checked={this.props.selectedId === this.props.product.productId}
+            onClick={() => this.props.selectProduct(this.props.product.productId)}
+            value={this.props.product.productId}
             color="secondary"
             name="radio-button-demo"
             aria-label="E"

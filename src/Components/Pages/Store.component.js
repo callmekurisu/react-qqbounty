@@ -17,6 +17,7 @@ export class Store extends React.Component {
 	
 	renderProducts = () => {
     if(this.props.products.length !== 0) {
+			console.log(this.props.products)
       return this.props.products.map( product => {
 				return <Product key={product.id} 
 												product={product} 

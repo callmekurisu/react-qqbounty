@@ -2,7 +2,7 @@ body {
   margin: 0;
 }
 .jss166 {height: 0px !important;}
-.root { background-color: #eef2ff;}
+#root { background-color: #d7e5f1 !important;}
 .flex-row     {  display: flex;  flex-direction: row;}
 .flex-column  {  display: flex;  flex-direction: column;}
 .xs-margin-column { margin: 5px;}
@@ -19,6 +19,12 @@ body {
   padding: 0;
   font-family: serif;
   font-size: 56px;
+}
+.navbar-tabs   { 
+  cursor: pointer; 
+  padding: 0;
+  font-family: serif;
+  font-size: 20px !important;
 }
 
 /*********************************
@@ -550,6 +556,7 @@ User Profile
 #footer {
   height: 10vh;
   width: 100%;
-  background-color: black;
+  box-shadow: 1px 1px 10px #d7e5f1;
+  background-color: #95c5ee;
 }
 

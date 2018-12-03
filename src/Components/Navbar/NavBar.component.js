@@ -143,7 +143,6 @@ export class NavBar extends React.Component {
               <Button 
                 id="nav-logo"
                 color="inherit"
-                className="navbar-tabs"
                 onClick={() => this.props.changePage('home')}>
                 qqBounty
               </Button>

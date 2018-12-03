@@ -13,6 +13,7 @@ export class UserProfile extends React.PureComponent {
   }
 
   renderUserImage = () => {
+    console.log(this.props.user)
     if(this.props.user.picture !== "") {
       return this.props.user.picture;
     } else return USER_IMG_DEFAULT;
@@ -26,7 +27,7 @@ export class UserProfile extends React.PureComponent {
           <div className="row">
             <div className="col-md-2 img">
               <div id="user-profile-img-wrapper">
-                <img className="profile-image img-rounded" src={imgSrc} alt="user_profile_image" />
+                <img className="profile-image img-rounded" src={USER_IMG_DEFAULT} alt="user_profile_image" />
               </div>
             </div>
             <div className="col-md-10 profile-details">

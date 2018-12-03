@@ -21,6 +21,7 @@ class AnswerSubmissionComponent extends React.Component {
 			"description": this.state.description,
 			"bountyId": this.state.bountyId
 		}
+		console.log(this.state);
 		axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('JWT');
 		axios.post(	`${REACT_APP_SERVER_ADDRESS}/answers`,answerObject)
 		.then(res => {

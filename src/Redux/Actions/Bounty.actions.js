@@ -98,17 +98,18 @@ export const getUserBounties = () => (dispatch) => {
 }
 
 export const getSearchBounties = (pSubjects) => (dispatch) => {
+  console.log(pSubjects)
   let paramString = "";
   if (pSubjects.length !== 0) {
     paramString = "?"
-    pSubjects.foreach((subject) => {
-      paramString = "subjects=" + subject + "&"
+    pSubjects.forEach((subject) => {
+      paramString += "subjects=" + subject + "&"
     })
     paramString = paramString.substring(0, paramString.length - 1);
   }
   if (localStorage.getItem('JWT')) {
     let jwtToken = localStorage.getItem('JWT');
-    axios.get(`${SERVER_ADDRESS}+/bounties/subjects${paramString}`,
+    axios.get(`${SERVER_ADDRESS}/bounties/subject${paramString}`,
     {
       headers: {
         'Authorization': `Bearer ${jwtToken}`

@@ -42,6 +42,7 @@ export const login = (pUsername, pPassword) => (dispatch) => {
     password: pPassword
   })
   .then(response => {
+    localStorage.setItem('JWT', response.data.result.jwt);
     dispatch({
       type: userTypes.USER_LOGIN,
       payload: {
@@ -54,12 +55,11 @@ export const login = (pUsername, pPassword) => (dispatch) => {
         message: "Welcome back " + response.data.result.user.username
       }
     });
-    localStorage.setItem('JWT', response.data.result.jwt);
-
-    setJwtToken();
+    // setJwtToken();
     axios.defaults.headers.common['Authorization'] = 'Bearer ' + response.data.result.jwt;
     axios.get(SERVER_ADDRESS+'/users/info')
     .then(response => {
+      console.log(response.data)
       dispatch({
         type: userTypes.SET_USER_INFO,
         payload: {

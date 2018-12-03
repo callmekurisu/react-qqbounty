@@ -46,7 +46,7 @@ class AnswerComponent extends React.Component {
 			
 			}).catch(err => {
 				console.log(err);
-				this.props.snackbarAdd("You already choose a best answer.");
+				this.props.snackbarAdd("You can't do that!");
 			})
 	}
 

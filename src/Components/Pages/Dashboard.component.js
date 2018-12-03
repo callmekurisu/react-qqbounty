@@ -8,6 +8,8 @@ import { connect } from 'react-redux';
 import BountyCard from '../Bounty/BountyWindows/BountyCard.component';
 import SelectSubjects from './SubmitBounty/SelectSubjects';
 
+import * as bountyActions from '../../Redux/Actions/Bounty.actions';
+
 export class Dashboard extends React.Component {
   constructor(props) {
 		super(props);
@@ -17,6 +19,7 @@ export class Dashboard extends React.Component {
   }
 
 	renderBountyCarousel = (pBounties) => {
+    console.log(pBounties)
     if(pBounties.length !== 0) {
       return  pBounties.map(bounty => {
                 return <BountyCard key={bounty.bountyId} bounty={bounty} />
@@ -30,7 +33,7 @@ export class Dashboard extends React.Component {
     let subjectArray = pSubjects.map(subject => subject.value);
 		this.setState({
       subjects: subjectArray,
-    }, () => console.log(this.state.subjects));
+    }, () => this.props.getSearchBounties(this.state.subjects));
   }
   
   handleKeyPress = (e) => {
@@ -83,7 +86,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-
+  getSearchBounties: bountyActions.getSearchBounties
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
