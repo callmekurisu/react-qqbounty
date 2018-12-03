@@ -64,7 +64,7 @@ class BountyContentComponent extends React.Component {
                 <Button className ="bounty-vote-button" size="small" color="black" onClick={() => this.vote(-1)}>
 									<MdThumbDown className='fontSize20' />
 								</Button>
-              <div> Rating: {this.state.votes}</div>
+              <div> {/*Rating: {this.state.votes}*/}</div>
             </div>
           </div>
           <hr className="my-2" />
