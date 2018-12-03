@@ -7,9 +7,6 @@ import axios from 'axios';
 import gem from '../../Assets/images/gem.png';
 const REACT_APP_SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
 
-
-
-
 class BountyContentComponent extends React.Component {
 
   constructor(props) {
@@ -32,12 +29,8 @@ class BountyContentComponent extends React.Component {
 			})
 	}
 
-
-
   render() {
     return (
-
-
       <Jumbotron fluid id='bounty-content-main'>
         <Container fluid>
           <div className='bounty-content-column flex-space-between'>
