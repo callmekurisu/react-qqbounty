@@ -37,11 +37,29 @@ export const setupUser = () => (dispatch) => {
 }
 
 export const login = (pUsername, pPassword) => (dispatch) => {
+  dispatch({
+    type: userTypes.USER_LOGIN,
+    payload: {
+      login: true
+    }
+  });
   axios.post(SERVER_ADDRESS+'/users/login', {
     username: pUsername,
     password: pPassword
   })
   .then(response => {
+    dispatch({
+      type: userTypes.USER_LOGIN,
+      payload: {
+        login: true
+      }
+    });
+    dispatch({
+      type: snackbarTypes.SNACKBAR_ADD,
+      payload: {
+        message: "Welcome back " + response.data.result.user.username
+      }
+    });
     localStorage.setItem('JWT', response.data.result.jwt);
 
     setJwtToken();
@@ -58,33 +76,9 @@ export const login = (pUsername, pPassword) => (dispatch) => {
     .catch(error => {
       
     });
-
-    dispatch({
-      type: userTypes.USER_LOGIN,
-      payload: {
-        login: true
-      }
-    });
-    dispatch({
-      type: snackbarTypes.SNACKBAR_ADD,
-      payload: {
-        message: "Welcome back " + response.data.result.user.username
-      }
-    });
   })
   .catch(error => {
-    dispatch({
-      type: userTypes.USER_LOGIN,
-      payload: {
-        login: false
-      }
-    });
-    dispatch({
-      type: snackbarTypes.SNACKBAR_ADD,
-      payload: {
-        message: "Cannot login"
-      }
-    });
+
   });
 }
 
