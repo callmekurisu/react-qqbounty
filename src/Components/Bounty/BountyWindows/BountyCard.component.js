@@ -1,19 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import classnames from 'classnames';
-
 import gem from '../../../Assets/images/gem.png';
 import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
 import Chip from '@material-ui/core/Chip';
-import time from '../../../Include/Time';
 import { connect } from 'react-redux';
 import * as bountyActions from '../../../Redux/Actions/Bounty.actions';
-import { Jumbotron, Container } from 'reactstrap';
 
 class BountyCard extends React.PureComponent {
  

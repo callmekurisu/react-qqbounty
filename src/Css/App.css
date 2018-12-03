@@ -1,6 +1,7 @@
 body {
   margin: 0;
 }
+.jss166 {height: 0px !important;}
 .root { background-color: #eef2ff;}
 .flex-row     {  display: flex;  flex-direction: row;}
 .flex-column  {  display: flex;  flex-direction: column;}
