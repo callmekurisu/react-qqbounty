@@ -39,12 +39,11 @@ export class Register extends React.Component {
   }
 	
 	handleRegisterClick = () => {
-		this.props.submitRegister(this.state.email, this.state.username, this.state.password);
+		this.props.submitRegister(this.state.username, this.state.password, this.state.email);
 		this.props.close();
 	}
 	
 	render() {
-		console.log("thing")
 		return (
 			<div className="register-wrapper">
         <Dialog

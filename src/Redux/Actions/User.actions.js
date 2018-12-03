@@ -99,22 +99,17 @@ export const logout = () => (dispatch) => {
 }
 
 export const register = (pUsername, pPassword, pEmail) => (dispatch) => {
-  axios.post(SERVER_ADDRESS+'/users', {
-    username: pUsername,
-    password: pPassword,
-    email: pEmail
-  })
+  const userObject = {
+    "username": pUsername,
+    "password": pPassword,
+    "email": pEmail
+  }
+  axios.post(SERVER_ADDRESS+'/users',userObject)
   .then(response => {
-    dispatch({
-      type: userTypes.USER_LOGIN,
-      payload: {
-        login: true
-      }
-    });
     dispatch({
       type: snackbarTypes.SNACKBAR_ADD,
       payload: {
-        message: response.data.result.message
+        message: "Register Successful"
       }
     });
   })

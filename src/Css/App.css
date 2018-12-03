@@ -118,7 +118,11 @@ body {
   display: inline-block;
 }
 
-.bounty-card-main   { height: 120px; margin: 5px;}
+.bounty-card-main   { 
+  height: 120px; 
+  margin: 5px;
+  overflow: hidden;
+}
 .bounty-card-title  { margin: 0 !important;}
 .bounty-card-content {
   display: inline-block  !important;
@@ -134,12 +138,18 @@ body {
   height: 20px !important;
 }
 
+.display-initial{
+  display: initial !important;
+}
+
 .bounty-card-footer {
+  display: flex;
   position: relative;
   text-align: center;
-  color: #fff12e;
+  color: white;
+  font-size: 20px;
   width: 100.5%;
-  background-color: #5539ff;
+  background: linear-gradient(rgb(252, 106, 54),rgb(236, 110, 110));
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   left: -0.2px;

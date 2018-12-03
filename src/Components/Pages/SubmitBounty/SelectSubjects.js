@@ -16,7 +16,22 @@ import { emphasize } from '@material-ui/core/styles/colorManipulator';
 
 const suggestions = [
   { label: 'Math' },
-  { label: 'Programming' }
+  { label: 'Programming' },
+  { label: 'English' },
+  { label: 'History' },
+  { label: 'Art' },
+  { label: 'Biology' },
+  { label: 'Physics' },
+  { label: 'Chemistry' },
+  { label: 'Calculus' },
+  { label: 'Algebra' },
+  { label: 'Java' },
+  { label: 'Python' },
+  { label: 'C' },
+  { label: 'Life Skills' },
+  { label: 'General Help' },
+  { label: 'Advice' },
+  { label: 'Other' }
 ].map(suggestion => ({
   value: suggestion.label,
   label: suggestion.label,
