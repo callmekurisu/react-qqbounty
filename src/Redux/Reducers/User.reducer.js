@@ -1,16 +1,8 @@
 import { userTypes } from "../Actions/User.actions";
 
 const initialState = {
-  login:  true,
-  user:   {
-    "userId": 2,
-    "username": "slimshady",
-    "email": "slim@shady.com",
-    "picture": "",
-    "walletId": 3,
-    "rating": 0,
-    "walletBalance": 6020
-},
+  login:  false,
+  user:   {},
   balance: 0
 }
 

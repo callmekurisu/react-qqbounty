@@ -24,79 +24,79 @@ export const bountyTypes = {
 export const getNewBounties = () => (dispatch) => {
 
   axios.get(SERVER_ADDRESS + '/bounties/newest')
-    .then(response => {
-      dispatch({
-        type: bountyTypes.GET_NEW_BOUNTIES,
-        payload: {
-          newBounties: response.data.result
-        }
-      });
-    })
-    .catch(error => {
+  .then(response => {
+    dispatch({
+      type: bountyTypes.GET_NEW_BOUNTIES,
+      payload: {
+        newBounties: response.data.result
+      }
     });
+  })
+  .catch(error => {
+  });
 }
 
 export const getOldBounties = () => (dispatch) => {
   axios.get(SERVER_ADDRESS + '/bounties/oldest')
-    .then(response => {
-      dispatch({
-        type: bountyTypes.GET_OLD_BOUNTIES,
-        payload: {
-          oldBounties: response.data.result
-        }
-      });
-    })
-    .catch(error => {
+  .then(response => {
+    dispatch({
+      type: bountyTypes.GET_OLD_BOUNTIES,
+      payload: {
+        oldBounties: response.data.result
+      }
     });
+  })
+  .catch(error => {
+  });
 }
 
 export const getPopularBounties = () => (dispatch) => {
   axios.get(SERVER_ADDRESS + '/bounties/popular')
-    .then(response => {
-      dispatch({
-        type: bountyTypes.GET_POPULAR_BOUNTIES,
-        payload: {
-          popularBounties: response.data.result
-        }
-      });
-    })
-    .catch(error => {
-
+  .then(response => {
+    dispatch({
+      type: bountyTypes.GET_POPULAR_BOUNTIES,
+      payload: {
+        popularBounties: response.data.result
+      }
     });
+  })
+  .catch(error => {
+
+  });
 }
 
 export const getHighPayBounties = () => (dispatch) => {
   axios.get(SERVER_ADDRESS + '/bounties/cost')
-    .then(response => {
-      dispatch({
-        type: bountyTypes.GET_HIGH_PAY_BOUNTIES,
-        payload: {
-          highPayBounties: response.data.result
-        }
-      });
-    })
-    .catch(error => {
-
+  .then(response => {
+    dispatch({
+      type: bountyTypes.GET_HIGH_PAY_BOUNTIES,
+      payload: {
+        highPayBounties: response.data.result
+      }
     });
+  })
+  .catch(error => {
+
+  });
 }
 
 export const getUserBounties = () => (dispatch) => {
   if (localStorage.getItem('JWT')) {
     let jwtToken = localStorage.getItem('JWT');
     axios.get(`${SERVER_ADDRESS}/bounties/user`,
-      {
-        headers: {
-          'Authorization': `Bearer ${jwtToken}`
+    {
+      headers: {
+        'Authorization': `Bearer ${jwtToken}`
+      }
+    })
+    .then((response) => {
+      dispatch({
+        type: bountyTypes.GET_USER_BOUNTIES,
+        payload: {
+          userBounties: response.data.result
         }
       })
-      .then((response) => {
-        dispatch({
-          type: bountyTypes.GET_USER_BOUNTIES,
-          payload: {
-            userBounties: response.data.result
-          }
-        })
-      })
+    })
   }
 }
 
@@ -112,23 +112,21 @@ export const getSearchBounties = (pSubjects) => (dispatch) => {
   if (localStorage.getItem('JWT')) {
     let jwtToken = localStorage.getItem('JWT');
     axios.get(`${SERVER_ADDRESS}+/bounties/subjects${paramString}`,
-      {
-        headers: {
-          'Authorization': `Bearer ${jwtToken}`
+    {
+      headers: {
+        'Authorization': `Bearer ${jwtToken}`
+      }
+    })
+    .then((response) => {
+      dispatch({
+        type: bountyTypes.GET_SEARCH_BOUNTIES,
+        payload: {
+          searchBounties: response.data.result
         }
       })
-      .then((response) => {
-        dispatch({
-          type: bountyTypes.GET_SEARCH_BOUNTIES,
-          payload: {
-            searchBounties: response.data.result
-          }
-        })
-      })
+    })
   }
 }
-
-
 
 export const submitBounty = (state) => (dispatch) => {
   console.log(state);

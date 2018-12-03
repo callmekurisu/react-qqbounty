@@ -17,6 +17,7 @@ import * as userActions from '../../Redux/Actions/User.actions';
 import Login from './Login.component';
 import Register from './Register.component';
 
+import GEMS from '../../Assets/images/gems.png'
 const styles = {
   grow: {
     flexGrow: 1,
@@ -138,12 +139,16 @@ export class NavBar extends React.Component {
       <>
         <AppBar position="static" id="app-navbar">
           <Toolbar>
-            <Button 
-              color="inherit"
-              className="navbar-tabs"
-              onClick={() => this.props.changePage('home')}>
-              qqBounty
-            </Button>
+            <span id="logo-wrapper">
+              <Button 
+                id="nav-logo"
+                color="inherit"
+                className="navbar-tabs"
+                onClick={() => this.props.changePage('home')}>
+                qqBounty
+              </Button>
+              <img src={GEMS} alt="logo gem" />
+            </span>
             <Typography 
               id="nav-logo"
               className={classes.grow}

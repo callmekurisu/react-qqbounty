@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 
 import Product from './Store/Product.component';
+import PayPalCheckout from './Store/PayPalCheckout.component';
 
 import * as storeActions from '../../Redux/Actions/Store.actions';
 
 export class Store extends React.Component {
 	state = {
-    selectProductId: 0
+		selectProductId: 0,
+		price: 0
 	};
 	
 	renderProducts = () => {
@@ -22,27 +24,37 @@ export class Store extends React.Component {
     } else return null;
 	}
 	
-	handleProductSelect = (pProductId) => {
-    this.setState({ selectProductId: pProductId });
-  };
+	handleProductSelect = (pProductId, pPrice) => {
+    this.setState({ 
+			selectProductId: pProductId,
+			price: pPrice
+		});
+	};
+	
+	renderPayButton = () => {
+		if(this.props.login) {
+			return	<PayPalCheckout price={this.state.price} productId={this.state.selectProductId} purchase={this.props.purchase} />
+		} else return <div>Please login to purchase</div>
+	}
 	
   render() {
     let renderProducts = this.renderProducts();
-
+		let payBtn = this.renderPayButton();
 		return (
 			<>
         <div id="store-wrapper">
 					<h1 id="store-header">
-						It ain't Falco
+						Limited Time Bundles!
 					</h1>
 					<div id="store-shelf">
 						{renderProducts}
 					</div>
 					<div id="store-btn-wrapper">
-						<Button variant="contained" color="primary" id="purchase-btn"
+						{payBtn}
+						{/* <Button variant="contained" color="primary" id="purchase-btn"
 							onClick={() => this.props.purchase(this.state.selectProductId)} >
 							Buy Now
-						</Button>
+						</Button> */}
 					</div>
 				</div>
       </>

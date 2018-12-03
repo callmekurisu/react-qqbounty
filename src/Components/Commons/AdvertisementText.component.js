@@ -7,7 +7,7 @@ export class AdvertisementText extends React.Component {
 			<>
         <div className="advertise-text-wrapper">
           <span className="advertise-span"></span>
-          <p className="advertise-text">{this.props.text}</p>
+            <p className="advertise-text">{this.props.text}</p>
           <span className="advertise-span"></span>
         </div>
       </>

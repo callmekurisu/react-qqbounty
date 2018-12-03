@@ -1,9 +1,7 @@
 import { storeTypes } from "../Actions/Store.actions";
 
 const initialState = {
-  products: [{"id":1, "productName":"Basic", "productCredit":"500", "productCost":"500"},
-  {"id":2, "productName":"Deluxe", "productCredit":"1000", "productCost":"1100"},
-  {"id":3, "productName":"Wombo Combo", "productCredit":"2000", "productCost":"2300"}]
+  products: []
 }
 
 export const storeReducer = (state = initialState, action) => {

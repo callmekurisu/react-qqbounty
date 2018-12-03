@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import WelcomeBanner from './Commons/WelcomeBanner.component';
 import Home from './Pages/Home.component';
 import Store from './Pages/Store.component';
 import Dashboard from './Pages/Dashboard.component';
@@ -8,7 +7,6 @@ import Dashboard from './Pages/Dashboard.component';
 import UserProfile from './Pages/UserProfile/UserProfile.component';
 
 import SubmitBounty from './Pages/SubmitBounty.component';
-import AdvertisementText from './Commons/AdvertisementText.component';
 
 import BountyModal from './Bounty/BountyModal.component';
 import AppSnackbar from './Commons/AppSnackbar.component';
@@ -25,15 +23,16 @@ export class MainContent extends React.Component {
 		this.props.getNew();
 		this.props.getPopular();
 		this.props.getOld();
+		this.props.setUpStore();
 	}
 
 	renderPage = () => {
 		if(this.props.page === 'home') {
-			return 	<Home />
+			return 	<Home login={this.props.login} />
 		}
 		else if(this.props.page === 'store') {
 			this.props.setUpStore()
-			return 	<Store />			
+			return 	<Store login={this.props.login} />			
 		}
 		else if(this.props.page === 'user_profile') {
 			return 	<UserProfile />			
@@ -46,19 +45,11 @@ export class MainContent extends React.Component {
 		}	
 	}
 
-	renderBanner = () => {
-		if(!this.props.login)
-			return <WelcomeBanner />
-		else return null
-	}
-
 	render() {
 		let sRenderPage 	= this.renderPage();
-		let sRenderBanner = this.renderBanner();
 
 		return (
 			<div className="main-content-wrapper">
-				{sRenderBanner}
 				{sRenderPage}
 				<BountyModal />
 				<AppSnackbar />
