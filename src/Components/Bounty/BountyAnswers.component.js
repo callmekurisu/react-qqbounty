@@ -4,6 +4,7 @@ import AnswerListComponent from '../Answers/AnswerList.component';
 import AnswerSubmissionComponent from '../Answers/AnswerSubmission.component';
 import {Button } from 'reactstrap';
 import axios from 'axios';
+import * as snackbarTypes from '../../Redux/Actions/Snackbar.actions';
 const REACT_APP_SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
 let jwtToken = localStorage.getItem('JWT');
 class BountyAnswersComponent extends React.Component {
@@ -29,7 +30,7 @@ class BountyAnswersComponent extends React.Component {
 				...this.state,
 				answers: data.data.result.answers.content
 			})
-			console.log(this.state.answers);
+
 		}).catch(err => {
 			console.log(err);
 		});

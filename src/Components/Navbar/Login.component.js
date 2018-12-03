@@ -33,6 +33,7 @@ export class Login extends React.Component {
 
 	handleInputChange = (e) => {
 		if (e.target.id === 'outlined-adornment-username') {
+			console.log(e.target.value);
 			this.setState({ username: e.target.value });
 		} else if (e.target.id === 'outlined-adornment-password') {
       this.setState({ password: e.target.value });

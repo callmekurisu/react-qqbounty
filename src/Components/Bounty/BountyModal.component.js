@@ -1,16 +1,11 @@
 import React from 'react';
-
-import { connect } from 'react-redux';
-
 import BountyContent from './BountyContent.component';
 import BountyAnswers from './BountyAnswers.component';
-
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 
-import * as bountyActions from '../../Redux/Actions/Bounty.actions';
 
 function Transition(props) {
   return <Slide direction="up" {...props} />;
@@ -57,16 +52,4 @@ class BountyModal extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    modalOpen:      state.bounty.modalOpen,
-    modalBounty:    state.bounty.modalBounty,
-    modalBountyId:  state.bounty.modalBountyId
-  }
-}
-
-const mapDispatchToProps = {
-  closeModal: bountyActions.closeBountyModal
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(BountyModal)
+export default BountyModal;

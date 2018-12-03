@@ -2,23 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import classnames from 'classnames';
+
+import gem from '../../../Assets/images/gem.png';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Chip from '@material-ui/core/Chip';
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import red from '@material-ui/core/colors/red';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import time from '../../../Include/Time';
 import { connect } from 'react-redux';
 import * as bountyActions from '../../../Redux/Actions/Bounty.actions';
+import { Jumbotron, Container } from 'reactstrap';
 
 class BountyCard extends React.PureComponent {
  
@@ -43,14 +38,20 @@ class BountyCard extends React.PureComponent {
           <div className="bounty-card-main">
             <h6 className="bounty-card-title">
               {this.props.bounty.title}
+              <hr className="my-2" />
             </h6>
             {tChips}
+            <hr className="my-2" />
             <p className="bounty-card-description">
               {this.props.bounty.description}
             </p>
           </div>
+        
           <div className="bounty-card-footer">
-            {this.props.bounty.amount}
+          <span className="margin-auto">
+            {this.props.bounty.amount} 
+            <img src={gem} className="display-initial margin-auto" width="20px" height="20px" alt="Reward: "/>
+          </span>
           </div>
         </CardContent>
       </Card>

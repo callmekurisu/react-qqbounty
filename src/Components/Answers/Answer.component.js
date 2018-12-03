@@ -4,6 +4,9 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import time from '../../Include/Time';
 import { MdThumbDown, MdThumbUp,MdFavorite } from "react-icons/md";
+import { connect } from 'react-redux';
+import * as snackbarActions from '../../Redux/Actions/Snackbar.actions';
+
 import axios from 'axios';
 const REACT_APP_SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
 class AnswerComponent extends React.Component {
@@ -19,27 +22,31 @@ class AnswerComponent extends React.Component {
 
 	vote = (voteValue) => {
 		axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('JWT');
-		axios.patch(`${REACT_APP_SERVER_ADDRESS}answers/${this.props.answer.answerId}/vote?voteValue=${voteValue}`,
+		axios.patch(`${REACT_APP_SERVER_ADDRESS}/answers/${this.props.answer.answerId}/vote?voteValue=${voteValue}`,
 			).then(() => {
 				this.setState({
 					...this.state,
 					votes: this.state.votes + voteValue
 				})
+				this.props.snackbarAdd("Succesfully Voted");
 			}).catch(err => {
 				console.log(err);
+				this.props.snackbarAdd("You already Voted");
 			})
 	}
 
 	chooseBestAnswer = () => {
 		axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('JWT');
-		axios.patch(`${REACT_APP_SERVER_ADDRESS}bounties/${this.props.bounty.bountyId}/answers/${this.props.answer.answerId}`,
+		axios.patch(`${REACT_APP_SERVER_ADDRESS}/bounties/${this.props.bounty.bountyId}/answers/${this.props.answer.answerId}`,
 			).then(() => {
 				this.setState({
 					...this.state,
 					statusId: 3
 				})
+			
 			}).catch(err => {
 				console.log(err);
+				this.props.snackbarAdd("You already choose a best answer.");
 			})
 	}
 
@@ -108,5 +115,14 @@ class AnswerComponent extends React.Component {
 		);
 	}
 }
+const mapStateToProps = (state) => {
+	return {
+	}
+  }
+  
+  const mapDispatchToProps = {
+	  snackbarAdd:     snackbarActions.add
+  }
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(AnswerComponent)
 
-export default AnswerComponent;
